@@ -2,6 +2,11 @@ import { defineConfig } from 'vite';
 import laravel, { refreshPaths } from 'laravel-vite-plugin';
 
 export default defineConfig({
+    server: {
+        hmr: {
+            host: 'app.tucunare.local.br',
+        },
+    },
     plugins: [
         laravel({
             input: [
