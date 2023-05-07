@@ -15,9 +15,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     /** Plans management */
+    Route::get('/admin/plans/create', CreatePlanController::class)->name('plans.create');
     Route::get('admin/plans/{url}', ShowPlanController::class)->name('plans.show');
     Route::get('/admin/plans', IndexPlanController::class)->name('plans.index');
-    Route::get('/admin/plans/create', CreatePlanController::class)->name('plans.create');
     Route::post('admin/plans/create', StorePlanController::class)->name('plans.store');
 
     Route::fallback(function() {
