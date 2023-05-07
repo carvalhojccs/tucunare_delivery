@@ -5,7 +5,7 @@
     <div
       class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50 flex justify-between">
       <h3>Planos</h3>
-        <x-link href="{{ route('plans.create') }}">Novo</x-link>
+        <x-link href="{{ route('plans.create') }}" class="bg-indigo-600">Novo</x-link>
       
     </div>
     <div class="p-6">
