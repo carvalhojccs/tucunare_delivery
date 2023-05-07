@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\Plans\{
     CreatePlanController,
+    DestroyPlanController,
     IndexPlanController,
     ShowPlanController,
     StorePlanController
@@ -15,10 +16,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     /** Plans management */
-    Route::get('/admin/plans/create', CreatePlanController::class)->name('plans.create');
+    Route::delete('/admin/plans/{url}', DestroyPlanController::class)->name('plans.destroy');
     Route::get('admin/plans/{url}', ShowPlanController::class)->name('plans.show');
+    Route::get('/admin/plans/create', CreatePlanController::class)->name('plans.create');
+    Route::post('admin/plans', StorePlanController::class)->name('plans.store');
     Route::get('/admin/plans', IndexPlanController::class)->name('plans.index');
-    Route::post('admin/plans/create', StorePlanController::class)->name('plans.store');
 
     Route::fallback(function() {
         return view('pages.utility.404');
