@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\Plans\{
     CreatePlanController,
     DestroyPlanController,
     IndexPlanController,
+    SearchPlanController,
     ShowPlanController,
     StorePlanController
 };
@@ -16,6 +17,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
 
     /** Plans management */
+    Route::any('admin/plans/search', SearchPlanController::class)->name('plans.search');
     Route::delete('/admin/plans/{url}', DestroyPlanController::class)->name('plans.destroy');
     Route::get('admin/plans/{url}', ShowPlanController::class)->name('plans.show');
     Route::get('/admin/plans/create', CreatePlanController::class)->name('plans.create');
