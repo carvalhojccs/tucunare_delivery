@@ -11,9 +11,10 @@ class UpdatePlanController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(UpdatePlanRequest $request, $url)
+    public function __invoke(UpdatePlanRequest $request, $id)
     {
-        Plans::where('url', $url)->update($request->except(['_token', '_method']));
+        $plan = Plans::findOrFail($id);
+        $plan->update($request->except(['_token', '_method']));
 
         return redirect()->route('plans.index');
     }

@@ -5,7 +5,7 @@
         class="border-b-2 border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50 flex justify-between">
         <h3>Novo Plano</h3>
       </div>
-    <x-form action="{{ route('plans.update', $plan->url) }}" method="PUT">
+    <x-form action="{{ route('plans.update', $plan->id) }}" method="PUT">
       @include('admin.pages.plans.partials.form')
     </x-form>
   </div>
