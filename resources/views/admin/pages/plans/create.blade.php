@@ -6,16 +6,7 @@
       <h3>Novo Plano</h3>
     </div>
   <x-form action="{{ route('plans.store') }}" method="POST">
-    <x-label>Nome</x-label>
-    <x-input type="text" class="w-full" name="name"></x-input>
-
-    <x-label>Preço</x-label>
-    <x-input type="text" name="price"></x-input>
-
-    <x-label>Descrição</x-label>
-    <x-input type="text" class="w-full" name="description"></x-input>
-
-    <x-button class="mt-2">Salvar</x-button>
+    @include('admin.pages.plans.partials.form')
   </x-form>
 </div>
 </x-app-layout>
