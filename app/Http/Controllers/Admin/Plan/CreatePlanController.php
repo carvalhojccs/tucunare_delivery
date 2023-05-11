@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Plans;
+namespace App\Http\Controllers\Admin\Plan;
 
 use App\Http\Controllers\Controller;
 
