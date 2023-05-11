@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Http\Controllers\Admin\Plans;
+namespace App\Http\Controllers\Admin\Plan;
 
 use App\Http\Controllers\Controller;
-use App\Models\Plans;
-use Illuminate\Http\Request;
+use App\Models\Plan;
 
 class IndexPlanController extends Controller
 {
@@ -13,7 +12,7 @@ class IndexPlanController extends Controller
      */
     public function __invoke()
     {
-        $plans = Plans::latest()->paginate();
+        $plans = Plan::latest()->paginate();
 
         return view('admin.pages.plans.index', compact('plans'));
     }

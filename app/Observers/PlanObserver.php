@@ -2,7 +2,7 @@
 
 namespace App\Observers;
 
-use App\Models\Plans;
+use App\Models\Plan;
 use Illuminate\Support\Str;
 
 class PlanObserver
@@ -10,7 +10,7 @@ class PlanObserver
     /**
      * Handle the Plan "creating" event.
      */
-    public function creating(Plans $plan): void
+    public function creating(Plan $plan): void
     {
         $plan->url = Str::kebab($plan->name);
     }
@@ -18,7 +18,7 @@ class PlanObserver
     /**
      * Handle the Plan "updating" event.
      */
-    public function updating(Plans $plan): void
+    public function updating(Plan $plan): void
     {        
         $plan->url = Str::kebab($plan->name);
     }    
