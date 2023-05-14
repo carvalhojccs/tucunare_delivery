@@ -80,7 +80,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         /** Permissions management */
         Route::get('/permissions', IndexPermissionController::class)->name('permissions.index');
         Route::post('/permissions', StorePermissionController::class)->name('permissions.store');
-        Route::get('/permissions/create', CreatePermissionController::class)->name('prodiles.create');
+        Route::get('/permissions/create', CreatePermissionController::class)->name('permissions.create');
         Route::get('/permissions/{id}', ShowPermissionController::class)->name('permissions.show');
         Route::put('/permissions/{id}', UpdatePermissionController::class)->name('permissions.update');
         Route::delete('/permissions/{id}', DestroyPermissionController::class)->name('permissions.destroy');
