@@ -29,6 +29,16 @@ use App\Http\Controllers\Admin\Profile\{
     StoreProfileController,
     UpdateProfileController,
 };
+use App\Http\Controllers\Admin\Permission\{
+    CreatePermissionController,
+    DestroyPermissionController,
+    EditPermissionController,
+    IndexPermissionController,
+    SearchPermissionController,
+    ShowPermissionController,
+    StorePermissionController,
+    UpdatePermissionController
+};
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -66,6 +76,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::delete('/profiles/{id}', DestroyProfileController::class)->name('profiles.destroy');
         Route::get('/profiles/{id}/edit', EditProfileController::class)->name('profiles.edit');
         Route::any('/profiles/search', SearchProfileController::class)->name('profiles.search');
+
+        /** Permissions management */
+        Route::get('/permissions', IndexPermissionController::class)->name('permissions.index');
+        Route::post('/permissions', StorePermissionController::class)->name('permissions.store');
+        Route::get('/permissions/create', CreatePermissionController::class)->name('prodiles.create');
+        Route::get('/permissions/{id}', ShowPermissionController::class)->name('permissions.show');
+        Route::put('/permissions/{id}', UpdatePermissionController::class)->name('permissions.update');
+        Route::delete('/permissions/{id}', DestroyPermissionController::class)->name('permissions.destroy');
+        Route::get('/permissions/{id}/edit', EditPermissionController::class)->name('permissions.edit');
+        Route::any('/permissions/search', SearchPermissionController::class)->name('permissions.search');	
     });
     
     
