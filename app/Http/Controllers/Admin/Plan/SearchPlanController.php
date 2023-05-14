@@ -20,7 +20,6 @@ class SearchPlanController extends Controller
     {
         $filters = $request->except('_token');
 
-
         $plans = $this->plan->search($request->filter);
 
         return view('admin.pages.plans.index', compact('plans', 'filters'));
