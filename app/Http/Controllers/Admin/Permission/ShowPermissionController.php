@@ -3,15 +3,17 @@
 namespace App\Http\Controllers\Admin\Permission;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Models\Permission;
 
 class ShowPermissionController extends Controller
 {
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request)
+    public function __invoke($id)
     {
-        //
+        $permission = Permission::findOrFail($id);
+
+        return view('admin.pages.permissions.show', compact('permission'));
     }
 }
