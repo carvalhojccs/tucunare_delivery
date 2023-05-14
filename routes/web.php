@@ -19,6 +19,16 @@ use App\Http\Controllers\Admin\Plan\Detail\{
     StorePlanDetailController,
     UpdatePlanDetailController
 };
+use App\Http\Controllers\Admin\Profile\{
+    CreateProfileController,
+    DestroyProfileController,
+    EditProfileController,
+    IndexProfileController,
+    SearchProfileController,
+    ShowProfileController,
+    StoreProfileController,
+    UpdateProfileController,
+};
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -46,6 +56,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::delete('/plans/{url}', DestroyPlanController::class)->name('plans.destroy');
         Route::get('/plans/{url}/edit', EditPlanController::class)->name('plans.edit');
         Route::any('/plans/search', SearchPlanController::class)->name('plans.search');
+
+        /** Profiles management */
+        Route::get('/profiles', IndexProfileController::class)->name('profiles.index');
+        Route::post('/profiles', StoreProfileController::class)->name('profiles.store');
+        Route::get('/profiles/create', CreateProfileController::class)->name('profiles.create');
+        Route::get('/profiles/{id}', ShowProfileController::class)->name('profiles.show');
+        Route::put('/profiles/{id}', UpdateProfileController::class)->name('profiles.update');
+        Route::delete('/profiles/{id}', DestroyProfileController::class)->name('profiles.destroy');
+        Route::get('/profiles/{id}/edit', EditProfileController::class)->name('profiles.edit');
+        Route::any('/profiles/search', SearchProfileController::class)->name('profiles.search');
     });
     
     

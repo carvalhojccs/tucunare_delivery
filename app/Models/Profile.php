@@ -13,4 +13,11 @@ class Profile extends Model
         'name',
         'description'
     ];
+
+    public function search($filter = null)
+    {
+        return $this->where('name', 'ILIKE', "%{$filter}%")
+                    ->orWhere('description', 'ILIKE', "%{$filter}%")
+                    ->paginate();
+    }
 }
