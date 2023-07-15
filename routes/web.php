@@ -39,6 +39,7 @@ use App\Http\Controllers\Admin\Permission\{
     StorePermissionController,
     UpdatePermissionController
 };
+use App\Http\Controllers\Admin\PermissionProfile\AttachPermissionProfileController;
 use App\Http\Controllers\Admin\PermissionProfile\AvailablePermissionController;
 use App\Http\Controllers\Admin\PermissionProfile\IndexPermissionProfileController;
 use App\Http\Controllers\DashboardController;
@@ -90,6 +91,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::any('/permissions/search', SearchPermissionController::class)->name('permissions.search');	
 
         /** Permissions x Profiles management */
+        Route::post('profiles/{id}/permissions', AttachPermissionProfileController::class)->name('profiles.permissions.attach');
         Route::get('profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('permissions.profiles.availables');
         Route::get('profiles/{id}/permissions', IndexPermissionProfileController::class)->name('permissions.profiles.index');
     });
