@@ -64,36 +64,39 @@
                 <div class="overflow-hidden">
                     <x-session-message type='error' />
                     <x-session-message type='message' />
+                    <x-session-message type='info' />
                     <h3>Permissões disponíveis para o perfil <strong>{{ $profile->name }}</strong></h3>
                     <table class="w-full text-left text-sm font-light">
                         <thead class="border-b font-medium dark:border-neutral-500">
                             <tr>
+                                <th scope="col" class="px-6 py-4">#</th>
                                 <th scope="col" class="px-6 py-4">Nome</th>
                                 <th scope="col" class="px-6 py-4">Descrição</th>
-                                <th scope="col" class="px-6 py-4">Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($permissions as $permission)
-                                <tr
-                                    class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $permission->name }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $permission->description }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">
-                                        <a href="{{-- route('profiles.show', $profile->id) --}}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none"
-                                                viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-                                                class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
-                                                <path stroke-linecap="round" stroke-linejoin="round"
-                                                    d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                            </svg>
-                                        </a>
-
+                            <form action="{{ route('profiles.permissions.attach', $profile->id) }}" method="POST">
+                                @csrf
+                                @foreach ($permissions as $permission)
+                                    <tr
+                                        class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                                        <td class="whitespace-nowrap px-6 py-4">
+                                            <input
+                                                type="checkbox"
+                                                class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500"
+                                                name="permissions[]" value="{{ $permission->id }}"    
+                                            >
+                                        </td>
+                                        <td class="whitespace-nowrap px-6 py-4">{{ $permission->name }}</td>
+                                        <td class="whitespace-nowrap px-6 py-4">{{ $permission->description }}</td>                                    
+                                    </tr>                                    
+                                @endforeach
+                                <tr>
+                                    <td colspan="10">
+                                        <x-button>Vincular</x-button>
                                     </td>
                                 </tr>
-                            @endforeach
+                            </form>
                         </tbody>
                     </table>
                 </div>

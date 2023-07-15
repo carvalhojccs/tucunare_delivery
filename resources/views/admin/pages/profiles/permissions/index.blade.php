@@ -44,7 +44,7 @@
       </div>
       <!-- end breadcrumb -->
     <div class="flex justify-end">
-      <x-link href="{{-- route('profiles.create') --}}" class="bg-indigo-600">Vincular permissão</x-link>
+      <x-link href="{{ route('permissions.profiles.availables', $profile->id) }}" class="bg-indigo-600">Vincular permissão</x-link>
     </div>
 <div class="p-6">
     <div class="flex flex-col">
