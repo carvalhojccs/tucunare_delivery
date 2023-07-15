@@ -39,7 +39,7 @@
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
-
+                <!-- search form -->
                 <x-form action="{{ route('permissions.search') }}" method="POST">
                     <div class="bg-white items-center justify-between w-full flex rounded-full shadow-lg p-2 mb-5 sticky"
                         style="top: 5px">
@@ -70,6 +70,7 @@
                         </button>
                     </div>
                 </x-form>
+                <!-- end search form -->
                 <div class="overflow-hidden">
                     <x-session-message type='error' />
                     <x-session-message type='message' />
