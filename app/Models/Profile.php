@@ -26,4 +26,16 @@ class Profile extends Model
                     ->orWhere('description', 'ILIKE', "%{$filter}%")
                     ->paginate();
     }
+
+    public function permissionsAvailable($profile_id)
+    {
+        $permissions = Permission::whereNotIn('id', function ($query) use ($profile_id){
+            $query->select('permission_id');
+            $query->from('permission_profile');
+            $query->where('profile_id', $profile_id);
+        })
+        ->paginate();       
+
+        return $permissions;
+    }
 }
