@@ -27,12 +27,16 @@ class Profile extends Model
                     ->paginate();
     }
 
-    public function permissionsAvailable($profile_id)
+    public function permissionsAvailable($profile_id, $filter = null)
     {
-        $permissions = Permission::whereNotIn('id', function ($query) use ($profile_id){
-            $query->select('permission_id');
+        $permissions = Permission::whereNotIn('permissions.id', function ($query) use ($profile_id){
+            $query->select('permission_profile.permission_id');
             $query->from('permission_profile');
-            $query->where('profile_id', $profile_id);
+            $query->where('permission_profile.profile_id', $profile_id);
+        })
+        ->where(function ($queryFilter) use ($filter) {
+            if ($filter)
+            $queryFilter->where('permissions.name', 'ILIKE',"%{$filter}%");
         })
         ->paginate();       
 

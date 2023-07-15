@@ -92,7 +92,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
         /** Permissions x Profiles management */
         Route::post('profiles/{id}/permissions', AttachPermissionProfileController::class)->name('profiles.permissions.attach');
-        Route::get('profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('permissions.profiles.availables');
+        Route::any('profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('permissions.profiles.availables');
         Route::get('profiles/{id}/permissions', IndexPermissionProfileController::class)->name('permissions.profiles.index');
     });
     
