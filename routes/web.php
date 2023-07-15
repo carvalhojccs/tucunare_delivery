@@ -39,6 +39,8 @@ use App\Http\Controllers\Admin\Permission\{
     StorePermissionController,
     UpdatePermissionController
 };
+use App\Http\Controllers\Admin\PermissionProfile\AvailablePermissionController;
+use App\Http\Controllers\Admin\PermissionProfile\IndexPermissionProfileController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -86,6 +88,10 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::delete('/permissions/{id}', DestroyPermissionController::class)->name('permissions.destroy');
         Route::get('/permissions/{id}/edit', EditPermissionController::class)->name('permissions.edit');
         Route::any('/permissions/search', SearchPermissionController::class)->name('permissions.search');	
+
+        /** Permissions x Profiles management */
+        Route::get('profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('permissions.profiles.availables');
+        Route::get('profiles/{id}/permissions', IndexPermissionProfileController::class)->name('permissions.profiles.index');
     });
     
     

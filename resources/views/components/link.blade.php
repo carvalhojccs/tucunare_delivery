@@ -4,7 +4,7 @@
 
 <a href="{{ $href }}" 
     {{ $attributes->merge([
-        'class' => 'w-20 rounded-md 
+        'class' => 'rounded-md 
         active:bg-indigo-600 
         px-3 
         py-2 
