@@ -24,7 +24,7 @@ class DetachPermissionProfileController extends Controller
         $profile->permissions()->detach($permission);
 
         return redirect()
-                ->route('permissions.profiles.index', $profile_id)
+                ->route('profiles.permissions.index', $profile_id)
                 ->with('message','Permissão desvinculada com sucesso!');
     }
 }

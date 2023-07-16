@@ -45,6 +45,7 @@ use App\Http\Controllers\Admin\PermissionProfile\{
     DetachPermissionProfileController,
     IndexPermissionProfileController
 };
+use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -96,8 +97,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         /** Permissions x Profiles management */
         Route::get('profiles/{id}/permissions/{idPermission}/detach', DetachPermissionProfileController::class)->name('profiles.permissions.detach');
         Route::post('profiles/{id}/permissions', AttachPermissionProfileController::class)->name('profiles.permissions.attach');
-        Route::any('profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('permissions.profiles.availables');
-        Route::get('profiles/{id}/permissions', IndexPermissionProfileController::class)->name('permissions.profiles.index');
+        Route::any('profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('profiles.permissions.availables');
+        Route::get('profiles/{id}/permissions', IndexPermissionProfileController::class)->name('profiles.permissions.index');
+
+        /** Profiles x Permissons management */
+        Route::get('permissions/{id}/profiles', IndexProfilePermissionController::class)->name('permissions.profiles.index');
     });
     
     
