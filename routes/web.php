@@ -46,6 +46,13 @@ use App\Http\Controllers\Admin\PermissionProfile\{
     IndexPermissionProfileController
 };
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
+use App\Http\Controllers\AdminPlanProfile\{
+    AttachPlanProfileController,
+    AvailablePlanProfileController,
+    DetachPlanProfileController,
+    IndexPlanProfileController,
+};
+use App\Http\Controllers\AdminProfilePlan\IndexProfilePlanController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -102,6 +109,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
         /** Profiles x Permissons management */
         Route::get('permissions/{id}/profiles', IndexProfilePermissionController::class)->name('permissions.profiles.index');
+
+        /**Plans x Profiles management**/
+	    Route::get('plans/{id}/profiles/{idProfile}/detach', DetachPlanProfileController::class)->name('plans.profiles.detach');
+	    Route::post('plans/{id}/profiles', AttachPlanProfileController::class)->name('plans.profiles.attach');
+	    Route::any('plans/{id}/profiles/availables', AvailablePlanProfileController::class)->name('plans.profiles.availables');
+	    Route::get('plans/{id}/profiles', IndexPlanProfileController::class)->name('plans.profiles.index');
+
+        /** Profiles x Plans management **/
+	    Route::get('profiles/{id}/plans', IndexProfilePlanController::class)->name('profiles.plans.index');
+
     });
     
     
