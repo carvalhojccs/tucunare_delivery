@@ -20,6 +20,11 @@ class Profile extends Model
         return $this->belongsToMany(Permission::class);
     }
 
+    public function plans(): BelongsToMany
+    {
+        return $this->belongsToMany(Plan::class);
+    }
+
     public function search($filter = null)
     {
         return $this->where('name', 'ILIKE', "%{$filter}%")
