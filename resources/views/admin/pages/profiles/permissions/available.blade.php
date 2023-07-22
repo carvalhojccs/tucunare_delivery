@@ -58,7 +58,7 @@
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
             <div class="inline-block min-w-full py-2 sm:px-6 lg:px-8">
                 <!-- search form -->
-                <x-form action="{{ route('permissions.profiles.availables', $profile->id) }}" method="POST">
+                <x-form action="{{ route('profiles.permissions.availables', $profile->id) }}" method="POST">
                     <div class="bg-white items-center justify-between w-full flex rounded-full shadow-lg p-2 mb-5 sticky"
                         style="top: 5px">
                         <div>

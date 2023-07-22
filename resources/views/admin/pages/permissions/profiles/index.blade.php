@@ -35,8 +35,8 @@
                 </li>
   
                 <li class="inline-flex items-center">
-                    <a href="#" class="text-gray-600 hover:text-blue-500">
-                        Profiles
+                    <a href="{{ route('permissions.index') }}" class="text-gray-600 hover:text-blue-500">
+                        Permissões
                     </a>
                     <svg class="w-5 h-auto fill-current mx-2 text-gray-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path d="M0 0h24v24H0V0z" fill="none" />
@@ -46,16 +46,13 @@
                 
                 <li class="inline-flex items-center">
                     <a href="#" class="text-gray-600 hover:text-blue-500">
-                        {{ $profile->name }}
+                        {{ $permission->name }}
                     </a>            
                 </li> 
             </ul>
         </div>  
       </div>
-      <!-- end breadcrumb -->
-    <div class="flex justify-end">
-      <x-link href="{{ route('profiles.permissions.availables', $profile->id) }}" class="bg-indigo-600">Vincular permissão</x-link>
-    </div>
+      <!-- end breadcrumb -->    
 <div class="p-6">
     <div class="flex flex-col">
         <div class="overflow-x-auto sm:-mx-6 lg:-mx-8">
@@ -64,30 +61,20 @@
                 <div class="overflow-hidden">
                     <x-session-message type='error' />
                     <x-session-message type='message' />
-                    <h3>Permissões do perfil: <strong>{{ $profile->name }}</strong></h3>
+                    <h3>Perfis com a permissão: <strong>{{ $permission->name }}</strong></h3>
                     <table class="w-full text-left text-sm font-light">
                         <thead class="border-b font-medium dark:border-neutral-500">
                             <tr>
                                 <th scope="col" class="px-6 py-4">Nome</th>
-                                <th scope="col" class="px-6 py-4">Descrição</th>
-                                <th scope="col" class="px-6 py-4">Ações</th>
+                                <th scope="col" class="px-6 py-4">Descrição</th>                                
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($profile->permissions as $permission)
+                            @foreach ($permission->profiles as $profile)
                                 <tr
                                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $permission->name }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">{{ $permission->description }}</td>
-                                    <td class="whitespace-nowrap px-6 py-4">
-                                        <a href="{{ route('profiles.permissions.detach', [$profile->id, $permission->id]) }}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="red" class="w-6 h-6">
-                                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5V6.75a4.5 4.5 0 119 0v3.75M3.75 21.75h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H3.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" />
-                                              </svg>
-                                              
-                                        </a>
-
-                                    </td>
+                                    <td class="whitespace-nowrap px-6 py-4">{{ $profile->name }}</td>
+                                    <td class="whitespace-nowrap px-6 py-4">{{ $profile->description }}</td>                                    
                                 </tr>
                             @endforeach
                         </tbody>

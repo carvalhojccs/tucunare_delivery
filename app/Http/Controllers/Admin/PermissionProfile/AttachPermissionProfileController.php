@@ -26,6 +26,6 @@ class AttachPermissionProfileController extends Controller
         $profile->permissions()->attach($request->permissions);
 
         return redirect()
-                ->route('permissions.profiles.index', $profile_id);
+                ->route('profiles.permissions.index', $profile_id);
     }
 }
