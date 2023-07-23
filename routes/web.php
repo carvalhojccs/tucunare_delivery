@@ -54,9 +54,11 @@ use App\Http\Controllers\Admin\PlanProfile\{
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Site\LandingPageController;
 use Illuminate\Support\Facades\Route;
 
-Route::redirect('/', 'login');
+//Route::redirect('/', 'login');
+Route::get('/home', [LandingPageController::class, 'index'])->name('home');
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/dashboard', DashboardController::class)->name('dashboard');
