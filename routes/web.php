@@ -45,14 +45,14 @@ use App\Http\Controllers\Admin\PermissionProfile\{
     DetachPermissionProfileController,
     IndexPermissionProfileController
 };
-use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
-use App\Http\Controllers\AdminPlanProfile\{
+use App\Http\Controllers\Admin\PlanProfile\{
     AttachPlanProfileController,
     AvailablePlanProfileController,
     DetachPlanProfileController,
-    IndexPlanProfileController,
+    IndexPlanProfileController
 };
-use App\Http\Controllers\AdminProfilePlan\IndexProfilePlanController;
+use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
+use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
