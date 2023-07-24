@@ -56,6 +56,24 @@
             </div>
         </nav>
     </header>
+    <main>
+        <section id="home" class="relative">
+            <div class="w-80 h-80 bg-color-blob absolute top-0 -left-5 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full"></div>
+            <div class="w-80 h-80 bg-color-secondary absolute bottom-10 right-0 -z-10 blur-2xl opacity-30 overflow-hidden rounded-full"></div>
+            <div class="container py-20">
+                <div class="flex flex-col items-center z-20 md:flex-row">
+                    <div class="text-center mb-12 md:text-left md:w-1/2 md:pr-10">
+                        <h1 class="text-3xl md:text-4xl font-bold leading-snug mb-4">Melhor sistema de delivery da região</h1>
+                        <p class="leading-relaxed mb-10">Ele permite gerenciar suas vendas no estabelecimento além de uma interface para seus clientes realizarem pedidos n-line</p>
+                    </div>
+                    <div class="md:w-1/2">
+                        <img src="{{ asset('images/landing-page-delivery.png') }}" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </main>
 
     <script>
         // mobile menu
