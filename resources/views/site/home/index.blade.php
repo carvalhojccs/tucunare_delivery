@@ -187,6 +187,37 @@
             </div>
 
         </section>
+        <section id="coments">
+            <div class="container py-20">
+                <div class="text-center m-auto mb-20 md:w-1/2">
+                    <h4 class="font-bold text-color-secondary mb-4">Comentários</h4>
+                    <h1 class="text-3xl md:text-4xl font-bold leading-snug">O que os clientes estão comentando após utilizar o sistema</h1>
+                </div>
+
+                <!-- coments container -->
+                <div class="mt-8">
+                    <div class="flex items-center justify-center flex-wrap">
+                        <img src="{{ asset('images/user1.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic border-2 border-solid border-color-secondary" onclick="showReview()">
+                        <img src="{{ asset('images/user2.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                        <img src="{{ asset('images/user3.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                        <img src="{{ asset('images/user4.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                        <img src="{{ asset('images/user5.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                    </div>
+
+                    <div class="grid place-items-center text-center m-auto md:w-4/5 min-h-[40vh]">
+                        <div class="user-text active-text">
+                            <p class="md:text-2xl mb-6">
+                               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores praesentium hic nemo accusamus reprehenderit temporibus esse quas saepe, voluptate, ex id eaque sapiente magni? Quis vero obcaecati facere at sunt.
+                            </p>
+                            <h4 class="font-bold text-color-secondary mb-1">Fulano de Tal</h4>
+                            <p>Profissão desconhecida</p>
+                        </div>
+
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script>
@@ -210,6 +241,7 @@
                 menuClose.classList.toggle("hidden");
             })
         });
+        
     </script>
 </body>
 
