@@ -211,10 +211,318 @@
                             </p>
                             <h4 class="font-bold text-color-secondary mb-1">Fulano de Tal</h4>
                             <p>Profissão desconhecida</p>
-                        </div>
-
-                        
+                        </div>                        
                     </div>
+                </div>
+            </div>
+        </section>
+        <section id="pricing" class="bg-color-primary-light">
+            <div class="container py-20">
+                <div class="text-center m-auto mb-20 md:w-1/2">
+                    <h4 class="font-bold text-color-secondary mb-4">Nossos preços</h4>
+                    <h1 class="text-3xl md:text-4xl font-bold leading-snug">Sempre tem um que cabe no bolso</h1>
+
+                    <!-- toggle month/year -->
+                    <div class="mt-5 flex items-center justify-center gap-4">
+                        <p>Mensalidade</p>
+                        <label class="cursor-pointer relative inline-block w-20 h-8 rounded-full">
+                            <input type="checkbox" id="toggle-btn" class="peer opacity-0 w-0 h-0">
+                            <span class="absolute top-0 left-0 right-0 bottom-0 bg-color-primary-light border border-solid border-color-gray rounded-full duration-300 before:content[''] before:absolute before:w-6 before:h-6 before:bottom-1 before:left-1 before:rounded-full before:bg-color-white before:duration-300
+                            peer-checked:before:translate-x-12 peer-checked:bg-color-secondary"></span>
+                        </label>
+                        <p>Anuidade</p>
+                    </div>                    
+                </div>
+                <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+                    <!-- card 1 -->
+                    <div class="card relative h-auto w-auto">
+                        <!-- front side -->
+                        <div id="card_1_front" class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
+                            <div class="relative">
+                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                    0,00 <span class="text-sm font-normal tracking-widest">/por mês</span>
+                                </p>
+                            </div>
+                            <div class="py-10">
+                                <h3 class="text-xl font-bold pb-3">FREE</h3>
+                                <p class="leading-relaxed">Você pode iniciar com o plano gratuito</p>
+                            </div>
+                            <ul class="space-y-4 pb-4">
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Categorias</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Produtos</span>                           
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Mesas</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Cardápio</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Suporte</span>                                      
+                                </li>
+                            </ul>
+
+                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                        </div>
+                        <!-- back side -->
+                        <div id="card_1_back" class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
+                            <div class="relative">
+                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                    0,00 <span class="text-sm font-normal tracking-widest">/por ano</span>
+                                </p>
+                            </div>
+                            <div class="py-10">
+                                <h3 class="text-xl font-bold pb-3">FREE</h3>
+                                <p class="leading-relaxed">Você pode iniciar com o plano gratuito</p>
+                            </div>
+                            <ul class="space-y-4 pb-4">
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Categorias</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Produtos</span>                           
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Mesas</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Cardápio</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Suporte</span>                                      
+                                </li>
+                            </ul>
+
+                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                        </div>
+                    </div>
+
+
+                    <!-- card 2 -->
+                    <div class="card relative h-auto w-auto">
+                        <!-- front side -->
+                        <div id="card_2_front" class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
+                            <div class="relative">
+                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                    25,00 <span class="text-sm font-normal tracking-widest">/por mês</span>
+                                </p>
+                            </div>
+                            <div class="py-10">
+                                <h3 class="text-xl font-bold pb-3">PREMIUM</h3>
+                                <p class="leading-relaxed">Para empreendimentos de médio porte</p>
+                            </div>
+                            <ul class="space-y-4 pb-4">
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Categorias</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Produtos</span>                           
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Mesas</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Cardápio</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Suporte</span>                                      
+                                </li>
+                            </ul>
+
+                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                        </div>
+                        <!-- back side -->
+                        <div id="card_2_back" class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
+                            <div class="relative">
+                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                    250,00 <span class="text-sm font-normal tracking-widest">/por ano</span>
+                                </p>
+                            </div>
+                            <div class="py-10">
+                                <h3 class="text-xl font-bold pb-3">PREMIUM</h3>
+                                <p class="leading-relaxed">Para empreendimentos de médio porte</p>
+                            </div>
+                            <ul class="space-y-4 pb-4">
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Categorias</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Produtos</span>                           
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Mesas</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Cardápio</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Suporte</span>                                      
+                                </li>
+                            </ul>
+
+                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                        </div>
+                    </div>
+
+                    <!-- card 3 -->
+                    <div class="card relative h-auto w-auto">
+                        <!-- front side -->
+                        <div id="card_3_front" class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
+                            <div class="relative">
+                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                    50,00 <span class="text-sm font-normal tracking-widest">/por mês</span>
+                                </p>
+                            </div>
+                            <div class="py-10">
+                                <h3 class="text-xl font-bold pb-3">BUSINESS</h3>
+                                <p class="leading-relaxed">Para empreendimentos de qualquer tamanho</p>
+                            </div>
+                            <ul class="space-y-4 pb-4">
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Categorias</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Produtos</span>                           
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Mesas</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Cardápio</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Suporte</span>                                      
+                                </li>
+                            </ul>
+
+                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                        </div>
+                        <!-- back side -->
+                        <div id="card_3_back" class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
+                            <div class="relative">
+                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                    500,00 <span class="text-sm font-normal tracking-widest">/por ano</span>
+                                </p>
+                            </div>
+                            <div class="py-10">
+                                <h3 class="text-xl font-bold pb-3">BUSINESS</h3>
+                                <p class="leading-relaxed">Para empreendimentos de qualquer tamanho</p>
+                            </div>
+                            <ul class="space-y-4 pb-4">
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Categorias</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Produtos</span>                           
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Mesas</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Cardápio</span>                                      
+                                </li>
+                                <li class="flex">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    </svg>
+                                    <span class="pl-4">Suporte</span>                                      
+                                </li>
+                            </ul>
+
+                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </section>
@@ -224,7 +532,7 @@
         // mobile menu
         const hamburger = document.querySelector("#hamburger");
         const menu = document.querySelector("#menu");
-        const hLink = document.querySelector("#hLink");
+        const hLink = document.querySelectorAll("#hLink");
         const menuOpen = document.getElementById("menu-open");
         const menuClose = document.getElementById("menu-close");
 
@@ -241,6 +549,28 @@
                 menuClose.classList.toggle("hidden");
             })
         });
+
+        const toggleBtn = document.getElementById("toggle-btn");
+
+        const card_1_front = document.querySelector("#card_1_front");
+        const card_1_back = document.querySelector("#card_1_back");
+
+        const card_2_front = document.querySelector("#card_2_front");
+        const card_2_back = document.querySelector("#card_2_back");
+
+        const card_3_front = document.querySelector("#card_3_front");
+        const card_3_back = document.querySelector("#card_3_back");
+
+        toggleBtn.addEventListener("change", () => {            
+            card_1_front.classList.toggle('-rotate-y-180');
+            card_1_back.classList.toggle('rotate-y-180');
+
+            card_2_front.classList.toggle('-rotate-y-180');
+            card_2_back.classList.toggle('rotate-y-180');
+
+            card_3_front.classList.toggle('-rotate-y-180');
+            card_3_back.classList.toggle('rotate-y-180');
+        })
         
     </script>
 </body>

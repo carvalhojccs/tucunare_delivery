@@ -83,5 +83,15 @@ module.exports = {
                 modifySelectors(({ className }) => `.sidebar-expanded .${e(`sidebar-expanded${separator}${className}`)}`);
             });
         }),
+        plugin(({addUtilities}) => {
+            addUtilities({
+                '.rotate-y-180': {
+                    transform: "rotateY(180deg)"
+                },
+                '.-rotate-y-180': {
+                    transform: "rotateY(-180deg)"
+                },
+            });
+        }),
     ],
 };
