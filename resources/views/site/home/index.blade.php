@@ -526,6 +526,40 @@
                 </div>
             </div>
         </section>
+        <section id="contact">
+            <div class="container py-20">
+                <div class="text-center m-auto mb-20 md:w-1/2">
+                    <h4 class="text-bold text-color-secondary mb-4">Tem alguma dúvida?</h4>
+                    <h1 class="text-3xl md:text-4xl font-bold leading-snug">Entre em contato</h1>
+                </div>
+
+                <form>
+                    <div class="w-full m-auto text-center md:w-2/3">
+                        <div class="text-color-primary-dark grid gap-6 mb-6 md:grid-cols-2">
+                            <input type="text" name="name" id="name" 
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Nome">
+                            <input type="text" name="email" id="email" 
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Email">
+                            <input type="text" name="phone_number" id="phone_number" 
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="(XX) XXXXX-XXXX">
+                            <input type="text" name="company" id="company" 
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Empresa">
+
+                            
+                        </div>
+                        <textarea rows="4" class="text-color-primary-dark bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Empresa"></textarea>
+
+                            <button
+                            class="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200 mt-10">Enviar mensagem
+                            </button>
+                    </div>
+
+                </form>
+
+            </div>
+
+
+        </section>
     </main>
 
     <script>
