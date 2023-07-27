@@ -56,6 +56,22 @@ module.exports = {
             zIndex: {
                 60: '60',
             },
+            colors: {
+                "color-primary": "#01051E",
+                "color-primary-light": "#020726",
+                "color-primary-dark": "#010417",
+                "color-secondary": "#FF7D3B",
+                "color-gray": "#333",
+                "color-white": "#FFF",
+                "color-blob": "#A427DF"
+            },
+            container: {
+                center: true,
+                padding: {
+                    DEFAULT: "20px",
+                    md: "50px"
+                }
+            }
         },
     },
     plugins: [
@@ -65,6 +81,16 @@ module.exports = {
         plugin(({ addVariant, e }) => {
             addVariant('sidebar-expanded', ({ modifySelectors, separator }) => {
                 modifySelectors(({ className }) => `.sidebar-expanded .${e(`sidebar-expanded${separator}${className}`)}`);
+            });
+        }),
+        plugin(({addUtilities}) => {
+            addUtilities({
+                '.rotate-y-180': {
+                    transform: "rotateY(180deg)"
+                },
+                '.-rotate-y-180': {
+                    transform: "rotateY(-180deg)"
+                },
             });
         }),
     ],
