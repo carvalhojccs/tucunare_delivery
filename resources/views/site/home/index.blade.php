@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +7,6 @@
     <title>Tucunaré Delivery</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-
 <body class="bg-color-primary text-color-white tracking-wide">
     <header class="sticky top-0 z-50">
         <nav class="container flex justify-between items-center">
@@ -21,13 +19,13 @@
                 <ul class="hidden lg:flex items-center space-x-6">
                     <li><a href="#home" class="hover:text-color-secondary ease-in duration-200">Home</a></li>
                     <li><a href="#features" class="hover:text-color-secondary ease-in duration-200">Recursos</a></li>
-                    <li><a href="#coments" class="hover:text-color-secondary ease-in duration-200">Comentários</a></li>
+                    <li><a href="#comments" class="hover:text-color-secondary ease-in duration-200">Comentários</a></li>
                     <li><a href="#pricing" class="hover:text-color-secondary ease-in duration-200">Preços</a></li>
                     <li><a href="#blog" class="hover:text-color-secondary ease-in duration-200">Blog</a></li>
                     <li><a href="#contact" class="hover:text-color-secondary ease-in duration-200">Contato</a></li>
 
-                    <li><button
-                            class="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200">Login</button>
+                    <li>
+                        <a href="/login" class="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200">Login</a>
                     </li>
                 </ul>
             </div>
@@ -56,7 +54,7 @@
                             class="hover:text-color-secondary ease-in duration-200">Home</a></li>
                     <li><a id="hLink" href="#features"
                             class="hover:text-color-secondary ease-in duration-200">Recursos</a></li>
-                    <li><a id="hLink" href="#coments"
+                    <li><a id="hLink" href="#comments"
                             class="hover:text-color-secondary ease-in duration-200">Comentários</a></li>
                     <li><a id="hLink" href="#pricing"
                             class="hover:text-color-secondary ease-in duration-200">Preços</a></li>
@@ -187,7 +185,7 @@
             </div>
 
         </section>
-        <section id="coments">
+        <section id="comments">
             <div class="container py-20">
                 <div class="text-center m-auto mb-20 md:w-1/2">
                     <h4 class="font-bold text-color-secondary mb-4">Comentários</h4>
@@ -195,7 +193,7 @@
                         utilizar o sistema</h1>
                 </div>
 
-                <!-- coments container -->
+                <!-- comments container -->
                 <div class="mt-8">
                     <div class="flex items-center justify-center flex-wrap">
                         <img src="{{ asset('images/user1.jpg') }}" alt=""
@@ -672,7 +670,7 @@
                                 <ul class="space-y-3">
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#home">Home</a></li>
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#features">Recursos</a></li>
-                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#coments">Comentários</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#comments">Comentários</a></li>
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#prices">Preços</a></li>
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#blog">Blog</a></li>
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#contact">Contato</a></li>
@@ -683,7 +681,7 @@
                                 <ul class="space-y-3">
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#">Sobre nós</a></li>
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#s">Parceiros</a></li>
-                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#coments">Avaliações</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#comments">Avaliações</a></li>
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#prices">Termos e condições</a></li>
                                     <li class="underline hover:no-underline hover:text-color-secondary"><a href="#blog">Ajuda</a></li>                                    
                                 </ul>
