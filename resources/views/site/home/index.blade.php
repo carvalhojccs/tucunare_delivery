@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-color-primary text-color-white tracking-wide">
-    <header>
+    <header class="sticky top-0 z-50">
         <nav class="container flex justify-between items-center">
             <div class="py-5 text-color-secondary font-bold text-3xl">
                 <a href="#home">
@@ -118,7 +118,7 @@
                         <p class="leading-relaxed">
                         <ul>
                             <li>Categorias</li>
-                            <li>Produtos</li>                          
+                            <li>Produtos</li>
                         </ul>
                         </p>
                     </div>
@@ -174,14 +174,14 @@
                         </div>
                         <h3 class="text-xl font-bold py-4">BUSINESS</h3>
                         <p class="leading-relaxed">
-                            <ul>
-                                <li>Categorias</li>
-                                <li>Produtos</li>
-                                <li>Mesas</li>
-                                <li>Cardápio</li>                                
-                                <li>Suporte</li>
-                            </ul>
-                            </p>
+                        <ul>
+                            <li>Categorias</li>
+                            <li>Produtos</li>
+                            <li>Mesas</li>
+                            <li>Cardápio</li>
+                            <li>Suporte</li>
+                        </ul>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -191,27 +191,36 @@
             <div class="container py-20">
                 <div class="text-center m-auto mb-20 md:w-1/2">
                     <h4 class="font-bold text-color-secondary mb-4">Comentários</h4>
-                    <h1 class="text-3xl md:text-4xl font-bold leading-snug">O que os clientes estão comentando após utilizar o sistema</h1>
+                    <h1 class="text-3xl md:text-4xl font-bold leading-snug">O que os clientes estão comentando após
+                        utilizar o sistema</h1>
                 </div>
 
                 <!-- coments container -->
                 <div class="mt-8">
                     <div class="flex items-center justify-center flex-wrap">
-                        <img src="{{ asset('images/user1.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic border-2 border-solid border-color-secondary" onclick="showReview()">
-                        <img src="{{ asset('images/user2.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
-                        <img src="{{ asset('images/user3.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
-                        <img src="{{ asset('images/user4.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
-                        <img src="{{ asset('images/user5.jpg') }}" alt="" class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                        <img src="{{ asset('images/user1.jpg') }}" alt=""
+                            class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic border-2 border-solid border-color-secondary"
+                            onclick="showReview()">
+                        <img src="{{ asset('images/user2.jpg') }}" alt=""
+                            class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                        <img src="{{ asset('images/user3.jpg') }}" alt=""
+                            class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                        <img src="{{ asset('images/user4.jpg') }}" alt=""
+                            class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
+                        <img src="{{ asset('images/user5.jpg') }}" alt=""
+                            class="h-20 w-20 rounded-full p-1 m-3 cursor-pointer user-pic" onclick="showReview()">
                     </div>
 
                     <div class="grid place-items-center text-center m-auto md:w-4/5 min-h-[40vh]">
                         <div class="user-text active-text">
                             <p class="md:text-2xl mb-6">
-                               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores praesentium hic nemo accusamus reprehenderit temporibus esse quas saepe, voluptate, ex id eaque sapiente magni? Quis vero obcaecati facere at sunt.
+                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolores praesentium hic nemo
+                                accusamus reprehenderit temporibus esse quas saepe, voluptate, ex id eaque sapiente
+                                magni? Quis vero obcaecati facere at sunt.
                             </p>
                             <h4 class="font-bold text-color-secondary mb-1">Fulano de Tal</h4>
                             <p>Profissão desconhecida</p>
-                        </div>                        
+                        </div>
                     </div>
                 </div>
             </div>
@@ -227,19 +236,22 @@
                         <p>Mensalidade</p>
                         <label class="cursor-pointer relative inline-block w-20 h-8 rounded-full">
                             <input type="checkbox" id="toggle-btn" class="peer opacity-0 w-0 h-0">
-                            <span class="absolute top-0 left-0 right-0 bottom-0 bg-color-primary-light border border-solid border-color-gray rounded-full duration-300 before:content[''] before:absolute before:w-6 before:h-6 before:bottom-1 before:left-1 before:rounded-full before:bg-color-white before:duration-300
+                            <span
+                                class="absolute top-0 left-0 right-0 bottom-0 bg-color-primary-light border border-solid border-color-gray rounded-full duration-300 before:content[''] before:absolute before:w-6 before:h-6 before:bottom-1 before:left-1 before:rounded-full before:bg-color-white before:duration-300
                             peer-checked:before:translate-x-12 peer-checked:bg-color-secondary"></span>
                         </label>
                         <p>Anuidade</p>
-                    </div>                    
+                    </div>
                 </div>
                 <div class="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
                     <!-- card 1 -->
                     <div class="card relative h-auto w-auto">
                         <!-- front side -->
-                        <div id="card_1_front" class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
+                        <div id="card_1_front"
+                            class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
                             <div class="relative">
-                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                <p
+                                    class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
                                     0,00 <span class="text-sm font-normal tracking-widest">/por mês</span>
                                 </p>
                             </div>
@@ -249,43 +261,56 @@
                             </div>
                             <ul class="space-y-4 pb-4">
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Categorias</span>                                      
+                                    <span class="pl-4">Categorias</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Produtos</span>                           
+                                    <span class="pl-4">Produtos</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Mesas</span>                                      
+                                    <span class="pl-4">Mesas</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Cardápio</span>                                      
+                                    <span class="pl-4">Cardápio</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Suporte</span>                                      
+                                    <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
 
-                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            <button
+                                class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
                         </div>
                         <!-- back side -->
-                        <div id="card_1_back" class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
+                        <div id="card_1_back"
+                            class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
                             <div class="relative">
-                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                <p
+                                    class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
                                     0,00 <span class="text-sm font-normal tracking-widest">/por ano</span>
                                 </p>
                             </div>
@@ -295,38 +320,49 @@
                             </div>
                             <ul class="space-y-4 pb-4">
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Categorias</span>                                      
+                                    <span class="pl-4">Categorias</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Produtos</span>                           
+                                    <span class="pl-4">Produtos</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Mesas</span>                                      
+                                    <span class="pl-4">Mesas</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Cardápio</span>                                      
+                                    <span class="pl-4">Cardápio</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Suporte</span>                                      
+                                    <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
 
-                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            <button
+                                class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
                         </div>
                     </div>
 
@@ -334,9 +370,11 @@
                     <!-- card 2 -->
                     <div class="card relative h-auto w-auto">
                         <!-- front side -->
-                        <div id="card_2_front" class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
+                        <div id="card_2_front"
+                            class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
                             <div class="relative">
-                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                <p
+                                    class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
                                     25,00 <span class="text-sm font-normal tracking-widest">/por mês</span>
                                 </p>
                             </div>
@@ -346,43 +384,56 @@
                             </div>
                             <ul class="space-y-4 pb-4">
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Categorias</span>                                      
+                                    <span class="pl-4">Categorias</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Produtos</span>                           
+                                    <span class="pl-4">Produtos</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Mesas</span>                                      
+                                    <span class="pl-4">Mesas</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Cardápio</span>                                      
+                                    <span class="pl-4">Cardápio</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Suporte</span>                                      
+                                    <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
 
-                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            <button
+                                class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
                         </div>
                         <!-- back side -->
-                        <div id="card_2_back" class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
+                        <div id="card_2_back"
+                            class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
                             <div class="relative">
-                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                <p
+                                    class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
                                     250,00 <span class="text-sm font-normal tracking-widest">/por ano</span>
                                 </p>
                             </div>
@@ -392,47 +443,60 @@
                             </div>
                             <ul class="space-y-4 pb-4">
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Categorias</span>                                      
+                                    <span class="pl-4">Categorias</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Produtos</span>                           
+                                    <span class="pl-4">Produtos</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Mesas</span>                                      
+                                    <span class="pl-4">Mesas</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Cardápio</span>                                      
+                                    <span class="pl-4">Cardápio</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#333" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Suporte</span>                                      
+                                    <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
 
-                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            <button
+                                class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
                         </div>
                     </div>
 
                     <!-- card 3 -->
                     <div class="card relative h-auto w-auto">
                         <!-- front side -->
-                        <div id="card_3_front" class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
+                        <div id="card_3_front"
+                            class="front px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full">
                             <div class="relative">
-                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                <p
+                                    class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
                                     50,00 <span class="text-sm font-normal tracking-widest">/por mês</span>
                                 </p>
                             </div>
@@ -442,43 +506,56 @@
                             </div>
                             <ul class="space-y-4 pb-4">
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Categorias</span>                                      
+                                    <span class="pl-4">Categorias</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Produtos</span>                           
+                                    <span class="pl-4">Produtos</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Mesas</span>                                      
+                                    <span class="pl-4">Mesas</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Cardápio</span>                                      
+                                    <span class="pl-4">Cardápio</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Suporte</span>                                      
+                                    <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
 
-                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            <button
+                                class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
                         </div>
                         <!-- back side -->
-                        <div id="card_3_back" class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
+                        <div id="card_3_back"
+                            class="back rotate-y-180 px-7 py-11 rounded-2xl border-2 border-solid border-color-gray h-full w-full absolute top-0 left-0">
                             <div class="relative">
-                                <p class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
+                                <p
+                                    class="text-6xl pl-2 font-bold before:content-['$'] before:absolute before:text-sm before:top-0 before:left-0">
                                     500,00 <span class="text-sm font-normal tracking-widest">/por ano</span>
                                 </p>
                             </div>
@@ -488,38 +565,49 @@
                             </div>
                             <ul class="space-y-4 pb-4">
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Categorias</span>                                      
+                                    <span class="pl-4">Categorias</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Produtos</span>                           
+                                    <span class="pl-4">Produtos</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Mesas</span>                                      
+                                    <span class="pl-4">Mesas</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Cardápio</span>                                      
+                                    <span class="pl-4">Cardápio</span>
                                 </li>
                                 <li class="flex">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="#FF7D3B" viewBox="0 0 24 24"
+                                        stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0111.186 0z" />
                                     </svg>
-                                    <span class="pl-4">Suporte</span>                                      
+                                    <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
 
-                            <button class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            <button
+                                class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
                         </div>
                     </div>
 
@@ -536,33 +624,107 @@
                 <form>
                     <div class="w-full m-auto text-center md:w-2/3">
                         <div class="text-color-primary-dark grid gap-6 mb-6 md:grid-cols-2">
-                            <input type="text" name="name" id="name" 
-                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Nome">
-                            <input type="text" name="email" id="email" 
-                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Email">
-                            <input type="text" name="phone_number" id="phone_number" 
-                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="(XX) XXXXX-XXXX">
-                            <input type="text" name="company" id="company" 
-                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Empresa">
-
-                            
+                            <input type="text" name="name" id="name"
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
+                                placeholder="Nome">
+                            <input type="text" name="email" id="email"
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
+                                placeholder="Email">
+                            <input type="text" name="phone_number" id="phone_number"
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
+                                placeholder="(XX) XXXXX-XXXX">
+                            <input type="text" name="company" id="company"
+                                class="bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
+                                placeholder="Empresa">
                         </div>
-                        <textarea rows="4" class="text-color-primary-dark bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary" placeholder="Empresa"></textarea>
+                        <textarea rows="4"
+                            class="text-color-primary-dark bg-gray-50 border border-gray-300 text-sm rounded-lg block w-full p-3 focus:outline-none focus:border-color-secondary"
+                            placeholder="Mensagem"></textarea>
 
-                            <button
-                            class="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200 mt-10">Enviar mensagem
-                            </button>
+                        <button
+                            class="bg-color-secondary px-9 py-3 rounded-md capitalize font-bold hover:opacity-80 ease-in duration-200 mt-10">Enviar
+                            mensagem
+                        </button>
                     </div>
-
                 </form>
-
             </div>
-
-
+        </section>
+        <section id="footer">
+            <div class="bg-color-primary-dark relative">
+                <div class="container py-10">
+                    <div class="grid gap-10 md:grid-cols-3 pb-10">
+                        <div class="space-y-6">
+                            <h4 class="font-bold text-lg">Sobre o sistema</h4>
+                            <p class="leading-relaxed">Este sistema foi desenvolvido pensando em ajudar empreendimentos que trabalham com atendimento no local e pretendem disponibilizar aos seus clientes um
+                                atendimento de qualidade e ainda disponibilizar opções de auto atendimento on-line.
+                            </p>
+                            <div class="flex gap-5 items-center">
+                                <p>Siga-nos em nossas redes sociais</p>
+                                <i class="cursor-pointer"><x-icons.facebook stroke="#FFFFFF"/></i>
+                                <i class="cursor-pointer"><x-icons.twitter stroke="#FFFFFF"/></i>
+                                <i class="cursor-pointer"><x-icons.youtube stroke="#FFFFFF"/></i>
+                                <i class="cursor-pointer"><x-icons.instagram stroke="#FFFFFF"/></i>
+                            </div>
+                        </div>                        
+                        <div class="flex justify-between md:justify-around">
+                            <div class="space-y-6">
+                                <h4 class="font-bold text-lg">Links rápidos</h4>
+                                <ul class="space-y-3">
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#home">Home</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#features">Recursos</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#coments">Comentários</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#prices">Preços</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#blog">Blog</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#contact">Contato</a></li>
+                                </ul>
+                            </div>
+                            <div class="space-y-6">
+                                <h4 class="font-bold text-lg">Ajuda</h4>
+                                <ul class="space-y-3">
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#">Sobre nós</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#s">Parceiros</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#coments">Avaliações</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#prices">Termos e condições</a></li>
+                                    <li class="underline hover:no-underline hover:text-color-secondary"><a href="#blog">Ajuda</a></li>                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="space-y-6">
+                            <h4 class="font-bold text-lg">Notícias</h4>
+                            <p class="leading-relaxed">Assine com seu melhor e-mail e as nossas notícias serão enviadas para você</p>
+                            <div class="flex items-center">
+                                <input type="text" name="newslatter" id="newslatter" class="w-3/4 text-color-gray bg-color-white p-2 lg:py-3 rounded-l-md focus:outline-none" placeholder="Informe seu Email">
+                                <button type="submit" class="bg-color-secondary px-4 py-2 lg:px-5 lg:py-3 rounded-r-md hover:opacity-90">                                    
+                                        <x-icons.chevron-right />                                    
+                                </button>
+                            </div>                            
+                        </div>                        
+                    </div>                    
+                    <div class="flex justify-center pt-10 border-t border-color-gray">
+                        <p>2023 &copy; Todos os direitos reservados</p>
+                    </div>
+                </div>
+            </div>
         </section>
     </main>
 
     <script>
+
+        // navnbar
+        const navbar = document.querySelector("header");
+
+        window.onscroll = () => {            
+            if (window.scrollY > 100) {
+                navbar.classList.add("bg-color-primary-dark");
+                navbar.classList.add("border-b");
+                navbar.classList.add("border-color-gray");
+            } else {
+                navbar.classList.remove("bg-color-primary-dark");
+                navbar.classList.remove("border-b");
+                navbar.classList.remove("border-color-gray");
+            }
+        }
+
         // mobile menu
         const hamburger = document.querySelector("#hamburger");
         const menu = document.querySelector("#menu");
@@ -595,7 +757,7 @@
         const card_3_front = document.querySelector("#card_3_front");
         const card_3_back = document.querySelector("#card_3_back");
 
-        toggleBtn.addEventListener("change", () => {            
+        toggleBtn.addEventListener("change", () => {
             card_1_front.classList.toggle('-rotate-y-180');
             card_1_back.classList.toggle('rotate-y-180');
 
@@ -605,7 +767,6 @@
             card_3_front.classList.toggle('-rotate-y-180');
             card_3_back.classList.toggle('rotate-y-180');
         })
-        
     </script>
 </body>
 
