@@ -14,9 +14,14 @@ class PlansSeeder extends Seeder
     public function run(): void
     {
         Plan::create([
-            ['name' => 'FREE', 'url' => 'free', 'price' => 0.00,],
-            ['name' => 'PREMIUM', 'url' => 'premium', 'price' => 100.00,],
-            ['name' => 'BUSINESS', 'url' => 'business', 'price' => 300.00,],
+            'name' => 'FREE', 'price' => 0.00, 'description' => 'Para quem está começando',            
         ]);
+        Plan::create([
+            'name' => 'PREMIUM', 'price' => 100.00,'description' => 'Para negócios'
+        ]);
+        Plan::create([
+            'name' => 'BUSINESS', 'price' => 300.00,'description' => 'Plano empresarial'           
+        ]);
+
     }
 }

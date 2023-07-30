@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Plan::class);
-            $table->string('cnpj',11)->unique();
+            $table->string('cnpj',14)->unique();
             $table->string('business_name');
             $table->string('fantasy_name');
             $table->string('url');
