@@ -299,9 +299,10 @@
                                     <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
-
+                            <a href="{{ route('plan.subscription', 1) }}">
                             <button
                                 class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            </a>
                         </div>
                         <!-- back side -->
                         <div id="card_1_back"
@@ -358,9 +359,10 @@
                                     <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
-
+                            <a href="{{ route('plan.subscription', 1) }}">
                             <button
                                 class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            </a>
                         </div>
                     </div>
 
@@ -422,9 +424,10 @@
                                     <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
-
+                            <a href="{{ route('plan.subscription', 2) }}">
                             <button
                                 class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            </a>
                         </div>
                         <!-- back side -->
                         <div id="card_2_back"
@@ -481,9 +484,10 @@
                                     <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
-
+                            <a href="{{ route('plan.subscription', 2) }}">
                             <button
                                 class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            </a>
                         </div>
                     </div>
 
@@ -544,9 +548,10 @@
                                     <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
-
+                            <a href="{{ route('plan.subscription', 3) }}">
                             <button
                                 class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            </a>
                         </div>
                         <!-- back side -->
                         <div id="card_3_back"
@@ -603,9 +608,10 @@
                                     <span class="pl-4">Suporte</span>
                                 </li>
                             </ul>
-
+                            <a href="{{ route('plan.subscription', 3) }}">
                             <button
                                 class="w-full px-9 py-3 bg-color-primary-dark rounded-md capitalize font-bold hover:bg-color-secondary ease-in duration-200">Assinar</button>
+                            </a>
                         </div>
                     </div>
 

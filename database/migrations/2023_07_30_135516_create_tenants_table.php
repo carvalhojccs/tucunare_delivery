@@ -17,14 +17,14 @@ return new class extends Migration
             $table->foreignIdFor(Plan::class);
             $table->string('cnpj',14)->unique();
             $table->string('business_name');
-            $table->string('fantasy_name');
+            $table->string('fantasy_name')->nullable();
             $table->string('url');
             $table->string('email')->unique();
-            $table->string('logo');
+            $table->string('logo')->nullable();
             $table->boolean('active')->default(true);
             $table->timestamp('subscription')->comment('Data da assinatura do plano pelo cliente');
             $table->timestamp('expires_at')->comment('Data em que expira o acesso ao sistema');
-            $table->string('subscription_id')->comment('Identificador do gatway de pagamento');
+            $table->string('subscription_id')->nullable()->comment('Identificador do gatway de pagamento');
             $table->boolean('subscription_active')->default(false)->comment('Assinatura ativa. Em caso de falta de pagamento, será desativada');
             $table->boolean('subscription_suspended')->default(false)->comment('Assinatura cancelada');
             $table->timestamps();
