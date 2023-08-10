@@ -27,8 +27,7 @@ class TenantService
 
         return $this->plan->tenants()->create([
             'cnpj' => $input['cnpj'],
-            'business_name' => $input['empresa'],
-            'url' => Str::kebab($input['empresa']),
+            'business_name' => $input['empresa'],            
             'email' => $input['email'],
             'subscription' => now(),
             'expires_at' => now()->addDays(7),
