@@ -3,7 +3,7 @@
 namespace App\Actions\Fortify;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Hash;
+use App\Services\TenantService;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 use Laravel\Jetstream\Jetstream;
@@ -22,14 +22,19 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make($input, [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'cnpj' => ['required', 'unique:tenants'],
+            'empresa' => ['required', 'unique:tenants,business_name'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
         ])->validate();
 
-        return User::create([
-            'name' => $input['name'],
-            'email' => $input['email'],
-            'password' => Hash::make($input['password']),
-        ]);
+        if (!$plan = session('plan')) {
+            return to_route('home');
+        }
+        
+        $tenantService = app(TenantService::class);
+        $user = $tenantService->make($plan, $input);        
+
+        return $user;
     }
 }

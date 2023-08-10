@@ -23,6 +23,11 @@ class Plan extends Model
         return $this->belongsToMany(Profile::class);
     }
 
+    public function tenants(): HasMany
+    {
+        return $this->hasMany(Tenant::class);
+    }
+
     public function profilesAvailabe($plan_id, $filter = null)
     {
         $profiles = Profile::whereNotIn('profiles.id', function($query) use($plan_id){
