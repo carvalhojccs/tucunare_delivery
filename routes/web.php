@@ -53,6 +53,7 @@ use App\Http\Controllers\Admin\PlanProfile\{
 };
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
+use App\Http\Controllers\Admin\User\CreateUserController;
 use App\Http\Controllers\Admin\User\IndexUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Site\LandingPageController;
@@ -124,7 +125,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 	    Route::get('profiles/{id}/plans', IndexProfilePlanController::class)->name('profiles.plans.index');
 
         /** Users management **/
-        Route::get('/admin/users', IndexUserController::class)->name('users.index');
+        Route::get('/users', IndexUserController::class)->name('users.index');
+        Route::get('/users/create', CreateUserController::class)->name('users.create');
     });
     
     
