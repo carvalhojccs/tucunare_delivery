@@ -55,6 +55,8 @@ use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionControlle
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
 use App\Http\Controllers\Admin\User\CreateUserController;
 use App\Http\Controllers\Admin\User\IndexUserController;
+use App\Http\Controllers\Admin\User\ShowUserController;
+use App\Http\Controllers\Admin\User\StoreUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Site\LandingPageController;
 use Illuminate\Support\Facades\Route;
@@ -126,7 +128,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
 
         /** Users management **/
         Route::get('/users', IndexUserController::class)->name('users.index');
+        Route::post('/users', StoreUserController::class)->name('users.store');
         Route::get('/users/create', CreateUserController::class)->name('users.create');
+        Route::get('/user/{id}', ShowUserController::class)->name('users.show');
     });
     
     
