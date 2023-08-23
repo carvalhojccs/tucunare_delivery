@@ -12,7 +12,7 @@ class EditUserController extends Controller
      */
     public function __invoke(int $user_id)
     {
-        if (!$user = User::find($user_id)) {
+        if (!$user = User::tenantUserFilter()->find($user_id)) {
             return redirect()->back();
         }
 

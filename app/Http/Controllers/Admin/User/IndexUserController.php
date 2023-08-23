@@ -13,7 +13,7 @@ class IndexUserController extends Controller
      */
     public function __invoke(): View
     {
-        $users = User::paginate();
+        $users = User::tenantUserFilter()->paginate();
 
         return view('admin.pages.users.index', compact('users'));
     }

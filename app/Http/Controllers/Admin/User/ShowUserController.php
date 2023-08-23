@@ -13,7 +13,7 @@ class ShowUserController extends Controller
      */
     public function __invoke(int $user_id): View
     {
-        $user = User::with('tenant')->where('id', $user_id)->first();
+        $user = User::with('tenant')->where('id', $user_id)->tenantUserFilter()->first();
 
         return view('admin.pages.users.show', compact('user'));
     }

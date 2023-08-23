@@ -15,7 +15,7 @@ class UpdateUserController extends Controller
      */
     public function __invoke(UpdateUserRequest $request, int $user_id): RedirectResponse
     {
-        if(!$user = User::find($user_id)) {
+        if(!$user = User::tenantUserFilter()->find($user_id)) {
             return redirect()->back();
         }
 

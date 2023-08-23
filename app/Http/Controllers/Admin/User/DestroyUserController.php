@@ -13,7 +13,7 @@ class DestroyUserController extends Controller
      */
     public function __invoke(int $id)
     {
-        if(!$user = User::find($id)) {
+        if(!$user = User::tenantUserFilter()->find($id)) {
             return redirect()->back();
         }
 
