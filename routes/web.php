@@ -53,6 +53,13 @@ use App\Http\Controllers\Admin\PlanProfile\{
 };
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
+use App\Http\Controllers\Admin\User\CreateUserController;
+use App\Http\Controllers\Admin\User\DestroyUserController;
+use App\Http\Controllers\Admin\User\EditUserController;
+use App\Http\Controllers\Admin\User\IndexUserController;
+use App\Http\Controllers\Admin\User\ShowUserController;
+use App\Http\Controllers\Admin\User\StoreUserController;
+use App\Http\Controllers\Admin\User\UpdateUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Site\LandingPageController;
 use Illuminate\Support\Facades\Route;
@@ -105,23 +112,31 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::any('/permissions/search', SearchPermissionController::class)->name('permissions.search');	
 
         /** Permissions x Profiles management */
-        Route::get('profiles/{id}/permissions/{idPermission}/detach', DetachPermissionProfileController::class)->name('profiles.permissions.detach');
-        Route::post('profiles/{id}/permissions', AttachPermissionProfileController::class)->name('profiles.permissions.attach');
-        Route::any('profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('profiles.permissions.availables');
-        Route::get('profiles/{id}/permissions', IndexPermissionProfileController::class)->name('profiles.permissions.index');
+        Route::get('/profiles/{id}/permissions/{idPermission}/detach', DetachPermissionProfileController::class)->name('profiles.permissions.detach');
+        Route::post('/profiles/{id}/permissions', AttachPermissionProfileController::class)->name('profiles.permissions.attach');
+        Route::any('/profiles/{id}/permissions/availables', AvailablePermissionController::class)->name('profiles.permissions.availables');
+        Route::get('/profiles/{id}/permissions', IndexPermissionProfileController::class)->name('profiles.permissions.index');
 
         /** Profiles x Permissons management */
-        Route::get('permissions/{id}/profiles', IndexProfilePermissionController::class)->name('permissions.profiles.index');
+        Route::get('/permissions/{id}/profiles', IndexProfilePermissionController::class)->name('permissions.profiles.index');
 
         /**Plans x Profiles management**/
-	    Route::get('plans/{id}/profiles/{idProfile}/detach', DetachPlanProfileController::class)->name('plans.profiles.detach');
-	    Route::post('plans/{id}/profiles', AttachPlanProfileController::class)->name('plans.profiles.attach');
-	    Route::any('plans/{id}/profiles/availables', AvailablePlanProfileController::class)->name('plans.profiles.availables');
-	    Route::get('plans/{id}/profiles', IndexPlanProfileController::class)->name('plans.profiles.index');
+	    Route::get('/plans/{id}/profiles/{idProfile}/detach', DetachPlanProfileController::class)->name('plans.profiles.detach');
+	    Route::post('/plans/{id}/profiles', AttachPlanProfileController::class)->name('plans.profiles.attach');
+	    Route::any('/plans/{id}/profiles/availables', AvailablePlanProfileController::class)->name('plans.profiles.availables');
+	    Route::get('/plans/{id}/profiles', IndexPlanProfileController::class)->name('plans.profiles.index');
 
         /** Profiles x Plans management **/
 	    Route::get('profiles/{id}/plans', IndexProfilePlanController::class)->name('profiles.plans.index');
 
+        /** Users management **/
+        Route::get('/users', IndexUserController::class)->name('users.index');
+        Route::post('/users', StoreUserController::class)->name('users.store');
+        Route::get('/users/create', CreateUserController::class)->name('users.create');
+        Route::get('/user/{id}', ShowUserController::class)->name('users.show');
+        Route::get('/user/{id}/edit', EditUserController::class)->name('users.edit');
+        Route::put('/user/{id}', UpdateUserController::class)->name('users.update');
+        Route::delete('/user/{id}', DestroyUserController::class)->name('users.destroy');
     });
     
     
