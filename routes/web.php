@@ -54,9 +54,12 @@ use App\Http\Controllers\Admin\PlanProfile\{
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
 use App\Http\Controllers\Admin\User\CreateUserController;
+use App\Http\Controllers\Admin\User\DestroyUserController;
+use App\Http\Controllers\Admin\User\EditUserController;
 use App\Http\Controllers\Admin\User\IndexUserController;
 use App\Http\Controllers\Admin\User\ShowUserController;
 use App\Http\Controllers\Admin\User\StoreUserController;
+use App\Http\Controllers\Admin\User\UpdateUserController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Site\LandingPageController;
 use Illuminate\Support\Facades\Route;
@@ -131,6 +134,9 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::post('/users', StoreUserController::class)->name('users.store');
         Route::get('/users/create', CreateUserController::class)->name('users.create');
         Route::get('/user/{id}', ShowUserController::class)->name('users.show');
+        Route::get('/user/{id}/edit', EditUserController::class)->name('users.edit');
+        Route::put('/user/{id}', UpdateUserController::class)->name('users.update');
+        Route::delete('/user/{id}', DestroyUserController::class)->name('users.destroy');
     });
     
     

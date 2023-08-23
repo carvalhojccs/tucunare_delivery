@@ -7,7 +7,7 @@
 <x-input-error for="email"></x-input-error>
 
 <x-label>{{ __('Senha') }}</x-label>
-<x-input type="password" class="w-full" name="password" value="{{ $user->password ?? old('password') }}" />
+<x-input type="password" class="w-full" name="password" />
 <x-input-error for="password"></x-input-error>
 
 <x-button class="mt-2">Salvar</x-button>
