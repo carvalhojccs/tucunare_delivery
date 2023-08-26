@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('plan_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Plan::class);
+            $table->foreignIdFor(Plan::class)->constrained();
             $table->string('name');
             $table->timestamps();
         });

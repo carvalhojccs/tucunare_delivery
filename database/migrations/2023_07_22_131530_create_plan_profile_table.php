@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('plan_profile', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Plan::class);
-            $table->foreignIdFor(Profile::class);
+            $table->foreignIdFor(Plan::class)->constrained();
+            $table->foreignIdFor(Profile::class)->constrained();
             $table->timestamps();
         });
     }

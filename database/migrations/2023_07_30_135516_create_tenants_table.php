@@ -14,7 +14,7 @@ return new class extends Migration
     {
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Plan::class);
+            $table->foreignIdFor(Plan::class)->constrained();
             $table->uuid();
             $table->string('cnpj',14)->unique();
             $table->string('business_name');
