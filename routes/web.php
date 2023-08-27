@@ -154,8 +154,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::post('/categories', StoreCategoryController::class)->name('categories.store');
         Route::get('/categories/create', CreateCategoryController::class)->name('categories.create');
         Route::get('/categories/{id}', ShowCategoryController::class)->name('categories.show');
-        Route::get('/categories/{id}/edit', EditCategoryController::class)->name('categories.edit');
         Route::put('/categories/{id}', UpdateCategoryController::class)->name('categories.update');
+        Route::get('/categories/{id}/edit', EditCategoryController::class)->name('categories.edit');        
         Route::delete('/categories/{id}', DestroyCategoryController::class)->name('categories.destroy');
     });
     

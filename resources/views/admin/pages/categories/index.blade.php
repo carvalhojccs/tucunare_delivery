@@ -1,9 +1,12 @@
-<x-app-layout>
+<x-app-layout>    
     <x-container>
         <x-breadcrumb>
             <x-breadcrumb-active>{{ __('Categorias') }}</x-breadcrumb-active>
         </x-breadcrumb>
         <x-links.new :route="route('categories.create')" />
+
+        <x-forms.search filter="{{ $filters['filter'] ?? '' }}"/>
+
         <x-session-message type="error" />
         <x-session-message type="message" />
         <x-tables.table>
@@ -13,13 +16,13 @@
                 <th scope="col" class="px-6 py-4">{{ __('Ações') }}</th>
             </x-slot>
             <x-slot name="tbody">
-                @forelse ($categories as $category)
+                @forelse ($data as $item)
                     <tr
                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
-                    <td class="whitespace-nowrap px-6 py-4">{{ $category->name }}</td>
-                    <td class="whitespace-nowrap px-6 py-4">{{ $category->description }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ $item->name }}</td>
+                    <td class="whitespace-nowrap px-6 py-4">{{ $item->description }}</td>
                     <td class="whitespace-nowrap px-6 py-4 flex space-x-5">
-                        <a href="{{ route('categories.show', $category->id) }}">
+                        <a href="{{ route('categories.show', $item->id) }}">
                             <x-icons.eye />
                         </a>
                     </td>

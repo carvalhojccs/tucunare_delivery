@@ -4,17 +4,17 @@
             <x-breadcrumb-active>{{ __('Usuários') }}</x-breadcrumb-active>            
         </x-breadcrumb>
         <x-links.new :route="route('users.create')" />
-        <x-card>
+        <x-card>            
             <x-session-message type='error' />
             <x-session-message type='message' />
 
             <x-tables.table>
-                <x-slot:thead>
+                <x-slot name="thead">
                     <th scope="col" class="px-6 py-4">{{ __('Nome') }}</th>
                     <th scope="col" class="px-6 py-4">{{ __('Email') }}</th>
                     <th scope="col" class="px-6 py-4">{{ __('Ações') }}</th>
                 </x-slote>
-                <x-slot:tbody>
+                <x-slot>
                     @forelse ($users as $user)
                     <tr
                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">

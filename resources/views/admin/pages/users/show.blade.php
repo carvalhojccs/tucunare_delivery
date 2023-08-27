@@ -2,7 +2,7 @@
     <x-container>
         <x-breadcrumb>
             <x-breadcrumb-item :route="route('users.index')">{{ __('Usuários') }}</x-breadcrumb-item>
-            <x-breadcrumb-active>Detalhes</x-breadcrumb-active>
+            <x-breadcrumb-active>{{ __('Detalhes') }}</x-breadcrumb-active>
         </x-breadcrumb>
         <x-card>
             <form>
