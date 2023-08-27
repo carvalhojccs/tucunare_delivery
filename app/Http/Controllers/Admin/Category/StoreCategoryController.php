@@ -17,6 +17,6 @@ class StoreCategoryController extends Controller
     {        
         Category::create($request->all());
 
-        return redirect()->route(Str::before(Route::currentRouteName(),'.').'index');
+        return redirect()->route(Str::before(Route::currentRouteName(),'.').'.index');
     }
 }
