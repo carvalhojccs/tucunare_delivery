@@ -1,5 +1,15 @@
 <?php
 
+use App\Http\Controllers\Admin\Category\{
+    CreateCategoryController,
+    DestroyCategoryController,
+    EditCategoryController,
+    IndexCategoryController,
+    SearchCategoryController,
+    ShowCategoryController,
+    StoreCategoryController,
+    UpdateCategoryController
+};
 use App\Http\Controllers\Admin\Plan\{
     CreatePlanController,
     DestroyPlanController,
@@ -137,6 +147,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('/user/{id}/edit', EditUserController::class)->name('users.edit');
         Route::put('/user/{id}', UpdateUserController::class)->name('users.update');
         Route::delete('/user/{id}', DestroyUserController::class)->name('users.destroy');
+
+        /** Categories management */
+        Route::match(['get','post'],'/categories/search', SearchCategoryController::class)->name('categories.search');
+        Route::get('/categories', IndexCategoryController::class)->name('categories.index');
+        Route::post('/categories', StoreCategoryController::class)->name('categories.store');
+        Route::get('/categories/create', CreateCategoryController::class)->name('categories.create');
+        Route::get('/categories/{id}', ShowCategoryController::class)->name('categories.show');
+        Route::get('/categories/{id}/edit', EditCategoryController::class)->name('categories.edit');
+        Route::put('/categories/{id}', UpdateCategoryController::class)->name('categories.update');
+        Route::delete('/categories/{id}', DestroyCategoryController::class)->name('categories.destroy');
     });
     
     
