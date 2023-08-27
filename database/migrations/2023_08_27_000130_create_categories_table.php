@@ -1,7 +1,6 @@
 <?php
 
-use App\Models\Plan;
-use App\Models\Profile;
+use App\Models\Tenant;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -13,10 +12,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('plan_profile', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Plan::class)->constrained();
-            $table->foreignIdFor(Profile::class)->constrained();
+            $table->foreignIdFor(Tenant::class)->constrained();
+            $table->string('name')->unique();
+            $table->string('url')->unique();
+            $table->string('description');
             $table->timestamps();
         });
     }
@@ -26,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('plan_profile');
+        Schema::dropIfExists('categories');
     }
 };
