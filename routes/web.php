@@ -169,7 +169,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::delete('/categories/{id}', DestroyCategoryController::class)->name('categories.destroy');
 
         /** Products management */
-        Route::match(['get','post'],'/products', SearchProductController::class)->name('products.index');
+        Route::match(['get','post'],'/products/search', SearchProductController::class)->name('products.search');
         Route::get('/products', IndexProductController::class)->name('products.index');
         Route::post('/products', StoreProductController::class)->name('products.store');
         Route::get('/products/create', CreateProductController::class)->name('products.create');
