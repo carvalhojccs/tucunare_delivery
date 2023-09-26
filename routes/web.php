@@ -61,6 +61,16 @@ use App\Http\Controllers\Admin\PlanProfile\{
     DetachPlanProfileController,
     IndexPlanProfileController
 };
+use App\Http\Controllers\Admin\Product\{
+    CreateProductController,
+    DestroyProductController,
+    EditProductController,
+    IndexProductController,
+    SearchProductController,
+    ShowProductController,
+    StoreProductController,
+    UpdateProductController
+};
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
 use App\Http\Controllers\Admin\User\CreateUserController;
@@ -157,6 +167,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::put('/categories/{id}', UpdateCategoryController::class)->name('categories.update');
         Route::get('/categories/{id}/edit', EditCategoryController::class)->name('categories.edit');        
         Route::delete('/categories/{id}', DestroyCategoryController::class)->name('categories.destroy');
+
+        /** Products management */
+        Route::match(['get','post'],'/products/search', SearchProductController::class)->name('products.search');
+        Route::get('/products', IndexProductController::class)->name('products.index');
+        Route::post('/products', StoreProductController::class)->name('products.store');
+        Route::get('/products/create', CreateProductController::class)->name('products.create');
+        Route::get('/products/{id}', ShowProductController::class)->name('products.show');
+        Route::get('/products/{id}/edit', EditProductController::class)->name('products.edit');
+        Route::put('/products/{id}', UpdateProductController::class)->name('products.update');
+        Route::delete('/products/{id}', DestroyProductController::class)->name('products.destroy');
     });
     
     
