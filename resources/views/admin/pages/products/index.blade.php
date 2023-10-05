@@ -20,7 +20,7 @@
                     <td class="whitespace-nowrap px-6 py-4"><img src="{{ url("storage/{$item->image}") }}" class="w-32 rounded-full"></td>
                     <td class="whitespace-nowrap px-6 py-4">{{ $item->title }}</td>
                     <td class="whitespace-nowrap px-6 py-4">{{ $item->price }}</td>
-                    <td class="whitespace-nowrap px-6 py-4 flex space-x-5">
+                    <td class="whitespace-nowrap px-6 py-4 flex space-x-5">                    
                         <a href="{{ route(Str::before(Route::currentRouteName(), '.').'.show', $item->id) }}">
                             <x-icons.eye />
                         </a>

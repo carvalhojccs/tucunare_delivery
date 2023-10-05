@@ -17,11 +17,11 @@
                         <x-label>{{ __('Criado em: ') }} {{ $data->created_at->format('d/m/Y - H:m:s') }}</x-label>                        
                     </div>
                     <div>
-                        <x-label>{{ __('Última atualização: ') }} 
-                            @if ($data->created_at != $data->updated_at)
-                                {{ $data->updated_at->format('d/m/Y - H:m:s') }}
-                            @endif
+                        @if ($data->created_at != $data->updated_at)
+                        <x-label>{{ __('Última atualização: ') }}                            
+                                {{ $data->updated_at->format('d/m/Y - H:m:s') }}                            
                         </x-label>
+                        @endif
                     </div>
                 </div>
             </form>

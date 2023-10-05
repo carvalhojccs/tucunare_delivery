@@ -10,6 +10,11 @@ use App\Http\Controllers\Admin\Category\{
     StoreCategoryController,
     UpdateCategoryController
 };
+use App\Http\Controllers\Admin\CategoryProduct\AttachCategoriesProductController;
+use App\Http\Controllers\Admin\CategoryProduct\CategoriesAvailableController;
+use App\Http\Controllers\Admin\CategoryProduct\CategoriesController;
+use App\Http\Controllers\Admin\CategoryProduct\DetachCategoryProductController;
+use App\Http\Controllers\Admin\CategoryProduct\ProductController;
 use App\Http\Controllers\Admin\Plan\{
     CreatePlanController,
     DestroyPlanController,
@@ -140,7 +145,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         /** Profiles x Permissons management */
         Route::get('/permissions/{id}/profiles', IndexProfilePermissionController::class)->name('permissions.profiles.index');
 
-        /**Plans x Profiles management**/
+        /** Plans x Profiles management **/
 	    Route::get('/plans/{id}/profiles/{idProfile}/detach', DetachPlanProfileController::class)->name('plans.profiles.detach');
 	    Route::post('/plans/{id}/profiles', AttachPlanProfileController::class)->name('plans.profiles.attach');
 	    Route::any('/plans/{id}/profiles/availables', AvailablePlanProfileController::class)->name('plans.profiles.availables');
@@ -177,6 +182,13 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('/products/{id}/edit', EditProductController::class)->name('products.edit');
         Route::put('/products/{id}', UpdateProductController::class)->name('products.update');
         Route::delete('/products/{id}', DestroyProductController::class)->name('products.destroy');
+
+        /** Category product management **/
+        Route::get('products/{id}/category/{category_id}/detach', DetachCategoryProductController::class)->name('products.category.detach');
+        Route::post('products/{id}/categories', AttachCategoriesProductController::class)->name('products.categories.attach');
+        Route::any('products/{id}/categories/available', CategoriesAvailableController::class)->name('products.categories.available');
+        Route::get('products/{id}/categories', CategoriesController::class)->name('products.categories');
+        Route::get('categories/{id}/products', ProductController::class)->name('categories.products');
     });
     
     
