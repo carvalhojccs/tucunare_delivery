@@ -13,7 +13,7 @@ class ShowProductController extends Controller
      */
     public function __invoke(int $id): View
     {
-        if (!$data = Product::find($id)) {
+        if (!$data = Product::with('categories')->find($id)) {
             return redirect()->back();
         }
 
