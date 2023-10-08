@@ -16,7 +16,7 @@ class UpdateCategoryController extends Controller
     public function __invoke(UpdateCategoryRequest $request, int $id)
     {
         if (!$data = Category::find($id)) {
-            redirect()->back();
+           return redirect()->back();
         }
 
         $data->update($request->all());

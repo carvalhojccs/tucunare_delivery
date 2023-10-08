@@ -11,7 +11,7 @@
                     <img src="{{ url("storage/{$data->image}") }}" class="w-32 rounded-full">
                 </div>
                 
-                <x-label>{{ 'Titulo' }}</x-label> 
+                <x-label>{{ __('Titulo') }}</x-label> 
                 <x-input type="text" class="w-full" value="{{ $data->title }}" disabled />
                     <x-label>{{ __('Descrição') }}</x-label>
                     <x-input type="text" class="w-full" value="{{ $data->description }}" disabled />

@@ -78,6 +78,14 @@ use App\Http\Controllers\Admin\Product\{
 };
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
+use App\Http\Controllers\Admin\Table\CreateTableController;
+use App\Http\Controllers\Admin\Table\DestroyTableController;
+use App\Http\Controllers\Admin\Table\EditTableController;
+use App\Http\Controllers\Admin\Table\IndexTableController;
+use App\Http\Controllers\Admin\Table\SearchTableController;
+use App\Http\Controllers\Admin\Table\ShowTableController;
+use App\Http\Controllers\Admin\Table\StoreTableController;
+use App\Http\Controllers\Admin\Table\UpdateTableController;
 use App\Http\Controllers\Admin\User\CreateUserController;
 use App\Http\Controllers\Admin\User\DestroyUserController;
 use App\Http\Controllers\Admin\User\EditUserController;
@@ -189,6 +197,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::any('products/{id}/categories/available', CategoriesAvailableController::class)->name('products.categories.available');
         Route::get('products/{id}/categories', CategoriesController::class)->name('products.categories');
         Route::get('categories/{id}/products', ProductController::class)->name('categories.products');
+
+        /** Table management **/
+        Route::match(['get','post'],'/tables/search', SearchTableController::class)->name('tables.search');
+        Route::get('/tables', IndexTableController::class)->name('tables.index');
+        Route::post('/tables', StoreTableController::class)->name('tables.store');
+        Route::get('/tables/create', CreateTableController::class)->name('tables.create');
+        Route::get('/tables/{id}', ShowTableController::class)->name('tables.show');
+        Route::get('/tables/{id}/edit', EditTableController::class)->name('tables.edit');
+        Route::put('/tables/{id}', UpdateTableController::class)->name('tables.update');
+        Route::delete('/tables/{id}', DestroyTableController::class)->name('tables.destroy');
     });
     
     
