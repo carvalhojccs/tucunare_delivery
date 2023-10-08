@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use App\Models\Tenant;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class UsersSeeder extends Seeder
 {
@@ -18,7 +18,7 @@ class UsersSeeder extends Seeder
         $tenant->users()->create([
             'name' => 'Jonne C C Silva',
             'email' => 'jonne.cley@gmail.com',
-            'password' => bcrypt('p0werl0w'),
+            'password' => Hash::make('p0werl0w'),
         ]);
     }
 }
