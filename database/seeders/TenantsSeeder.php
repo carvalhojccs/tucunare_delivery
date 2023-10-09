@@ -25,6 +25,6 @@ class TenantsSeeder extends Seeder
             'subscription' => now(), 
             'expires_at' => Carbon::now()->addDays(15),
             'subscription_id' => bcrypt('inter'),
-        ]);
+        ]);        
     }
 }

@@ -16,9 +16,9 @@ class LandingPageController extends Controller
     public function plan(int $plan_id)
     {
         
-        if (!$plan = Plan::find($plan_id)->first()) {
+        if (!$plan = Plan::find($plan_id)) {
             return redirect()->back();
-        }
+        }        
 
         session()->put('plan', $plan);
 
