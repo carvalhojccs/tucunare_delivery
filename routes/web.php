@@ -10,11 +10,14 @@ use App\Http\Controllers\Admin\Category\{
     StoreCategoryController,
     UpdateCategoryController
 };
-use App\Http\Controllers\Admin\CategoryProduct\AttachCategoriesProductController;
-use App\Http\Controllers\Admin\CategoryProduct\CategoriesAvailableController;
-use App\Http\Controllers\Admin\CategoryProduct\CategoriesController;
-use App\Http\Controllers\Admin\CategoryProduct\DetachCategoryProductController;
-use App\Http\Controllers\Admin\CategoryProduct\ProductController;
+use App\Http\Controllers\Admin\CategoryProduct\{
+    AttachCategoriesProductController,
+    CategoriesAvailableController,
+    CategoriesController,
+    DetachCategoryProductController,
+    ProductController,
+};
+
 use App\Http\Controllers\Admin\Plan\{
     CreatePlanController,
     DestroyPlanController,

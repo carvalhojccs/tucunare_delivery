@@ -16,8 +16,10 @@ class DatabaseSeeder extends Seeder
             [
                 PlansSeeder::class,
                 TenantsSeeder::class,
-                UsersSeeder::class
-
+                UsersSeeder::class,
+                ProfilesSeed::class,
+                PermissionsSeed::class,
+                PlanProfileSeed::class,
             ]
         );
     }
