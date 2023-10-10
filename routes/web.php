@@ -81,21 +81,35 @@ use App\Http\Controllers\Admin\Product\{
 };
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
-use App\Http\Controllers\Admin\Table\CreateTableController;
-use App\Http\Controllers\Admin\Table\DestroyTableController;
-use App\Http\Controllers\Admin\Table\EditTableController;
-use App\Http\Controllers\Admin\Table\IndexTableController;
-use App\Http\Controllers\Admin\Table\SearchTableController;
-use App\Http\Controllers\Admin\Table\ShowTableController;
-use App\Http\Controllers\Admin\Table\StoreTableController;
-use App\Http\Controllers\Admin\Table\UpdateTableController;
-use App\Http\Controllers\Admin\User\CreateUserController;
-use App\Http\Controllers\Admin\User\DestroyUserController;
-use App\Http\Controllers\Admin\User\EditUserController;
-use App\Http\Controllers\Admin\User\IndexUserController;
-use App\Http\Controllers\Admin\User\ShowUserController;
-use App\Http\Controllers\Admin\User\StoreUserController;
-use App\Http\Controllers\Admin\User\UpdateUserController;
+use App\Http\Controllers\Admin\Table\{
+    CreateTableController,
+    DestroyTableController,
+    EditTableController,
+    IndexTableController,
+    SearchTableController,
+    ShowTableController,
+    StoreTableController,
+    UpdateTableController
+};
+use App\Http\Controllers\Admin\Tenant\{
+    CreateTenantController,
+    DestroyTenantController,
+    EditTenantController,
+    IndexTenantController,
+    SearchTenantController,
+    ShowTenantController,
+    StoreTenantController,
+    UpdateTenantController
+};
+use App\Http\Controllers\Admin\User\{
+    CreateUserController,
+    DestroyUserController,
+    EditUserController,
+    IndexUserController,
+    ShowUserController,
+    StoreUserController,
+    UpdateUserController
+};
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Site\LandingPageController;
 use Illuminate\Support\Facades\Route;
@@ -212,12 +226,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
             Route::put('/tables/{id}', UpdateTableController::class)->name('tables.update')->middleware('can:module_tables_edit');
             Route::delete('/tables/{id}', DestroyTableController::class)->name('tables.destroy')->middleware('can:module_tables_delete');
         });
-        
 
-        // Route::get('teste-acl', function(){
-        //     //dd(auth()->user()->hasPermission('Listar Estoque'));
-        //     dd(auth()->user()->isAdmin());
-        // });
+        /** Tenant management **/
+        Route::match(['get','post'],'/tenants/search', SearchTenantController::class)->name('tenants.search');
+        Route::get('/tenants', IndexTenantController::class)->name('tenants.index');
+        Route::post('/tenants', StoreTenantController::class)->name('tenants.store');
+        Route::get('/tenants/create', CreateTenantController::class)->name('tenants.create');
+        Route::get('/tenants/{id}', ShowTenantController::class)->name('tenants.show');
+        Route::get('/tenants/{id}/edit', EditTenantController::class)->name('tenants.edit');
+        Route::put('/tenants/{id}', UpdateTenantController::class)->name('tenants.update');
+        Route::delete('/tenants/{id}', DestroyTenantController::class)->name('tenants.destroy');
     });
     
     
