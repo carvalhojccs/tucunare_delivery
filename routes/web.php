@@ -81,6 +81,16 @@ use App\Http\Controllers\Admin\Product\{
 };
 use App\Http\Controllers\Admin\ProfilePermission\IndexProfilePermissionController;
 use App\Http\Controllers\Admin\ProfilePlan\IndexProfilePlanController;
+use App\Http\Controllers\Admin\Role\{
+    CreateRoleController,
+    IndexRoleController,
+    DestroyRoleController,
+    EditRoleController,
+    SearchRoleController,
+    ShowRoleController,
+    StoreRoleController,
+    UpdateRoleController
+};
 use App\Http\Controllers\Admin\Table\{
     CreateTableController,
     DestroyTableController,
@@ -236,6 +246,16 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('/tenants/{id}/edit', EditTenantController::class)->name('tenants.edit');
         Route::put('/tenants/{id}', UpdateTenantController::class)->name('tenants.update');
         Route::delete('/tenants/{id}', DestroyTenantController::class)->name('tenants.destroy');
+
+        /** Roles management **/
+        Route::match(['get','post'],'/roles/search', SearchRoleController::class)->name('roles.search');
+        Route::get('/roles', IndexRoleController::class)->name('roles.index');
+        Route::post('/roles', StoreRoleController::class)->name('roles.store');
+        Route::get('/roles/create', CreateRoleController::class)->name('roles.create');
+        Route::get('/roles/{id}', ShowRoleController::class)->name('roles.show');
+        Route::get('/roles/{id}/edit', EditRoleController::class)->name('roles.edit');
+        Route::put('/roles/{id}', UpdateRoleController::class)->name('roles.update');
+        Route::delete('/roles/{id}', DestroyRoleController::class)->name('roles.destroy');
     });
     
     
