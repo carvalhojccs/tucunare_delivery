@@ -13,8 +13,8 @@
                     <th scope="col" class="px-6 py-4">{{ __('Nome') }}</th>
                     <th scope="col" class="px-6 py-4">{{ __('Email') }}</th>
                     <th scope="col" class="px-6 py-4">{{ __('Ações') }}</th>
-                </x-slote>
-                <x-slot>
+                </x-slot>
+                <x-slot name="tbody">
                     @forelse ($users as $user)
                     <tr
                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
