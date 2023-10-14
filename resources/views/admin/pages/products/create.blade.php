@@ -5,7 +5,7 @@
         <x-breadcrumb-active>{{ __('Criar') }}</x-breadcrumb-active>
         </x-breadcrumb>
         <x-card>
-            <form action="{{ route('tenants.store') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('products.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 @include('admin.pages.'.Str::before(Route::currentRouteName(), '.').'.partials.form')
             </form>

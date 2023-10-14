@@ -24,4 +24,14 @@ class Role extends Model
     {
         return $query->where('name', 'ilike', "%{$filter}%")->latest()->paginate();
     }
+
+    public function scopePermissionsAvailable(Builder $q,  int $role_id)
+    {
+        return Permission::whereNotIn('permissions.id', function ($query) use ($role_id) {
+            $query->select('permission_role.permission_id');
+            $query->from('permission_role');
+            $query->where('permission_role.role_id', $role_id);
+        })
+        ->paginate();
+    }
 }

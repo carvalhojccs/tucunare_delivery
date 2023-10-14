@@ -4,8 +4,8 @@
             <x-breadcrumb-item :route="route(Str::before(Route::currentRouteName(),'.').'.index')">{{ __('Produtos') }}</x-breadcrumb-item>
             <x-breadcrumb-active>{{ __('Detalhes') }}</x-breadcrumb-active>
         </x-breadcrumb>
+        <x-session-message type="message" />
         <x-card>
-            <x-session-message type="message" />
             <form>
                 <div class="flex justify-center">
                     <img src="{{ url("storage/{$data->image}") }}" class="w-32 rounded-full">
@@ -31,7 +31,7 @@
             <table class="w-full text-left text-sm font-light">
                 <caption class="caption-top bg-gray-200 px-2 py-2 rounded-full">{{ __('CATEGORIAS') }}</caption>
                 <tbody>
-                    @foreach ($data->categories as $category)
+                    @forelse ($data->categories as $category)
                     <tr
                     class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
                     <td class="whitespace-nowrap px-6 py-4">{{ $category->name }}</td>
@@ -46,12 +46,15 @@
                         </a>                        
                     </td>
                     </tr>
+                    @empty
+                    <tr>
+                        <td class="whitespace-nowrap px-6 py-4">{{ __('Nenhuma categoria vinculada') }}</td>
+                    </tr>   
                     @endforeach    
                 </tbody>
-
             </table>
         </x-card>        
-        <div  class="block mt-2 rounded-lg bg-gray-400 p-6 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">  
+        <div  class="block mt-2 rounded-lg bg-gray-200 p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">  
             <div class="flex justify-between">
                 <div>
                     <x-link href="{{ route(Str::before(Route::currentRouteName(),'.').'.index') }}" class="bg-indigo-600">

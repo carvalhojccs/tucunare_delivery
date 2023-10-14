@@ -14,7 +14,7 @@ class ShowRoleController extends Controller
      */
     public function __invoke(int $id): RedirectResponse | View
     {
-        if (!$data = Role::find($id)) {
+        if (!$data = Role::with('permissions')->find($id)) {
             return redirect()->back();
         }
 

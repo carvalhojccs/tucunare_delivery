@@ -24,9 +24,36 @@
                     @endif
                 </div>
             </form>
+            <table class="w-full text-left text-sm font-light">
+                <caption class="caption-top bg-gray-200 p-2 rounded-full">
+                    {{ __('PERMISSÕES') }}
+                </caption>
+                <tbody>
+                    @forelse ($data->permissions as $permission)
+                    <tr
+                    class="border-b transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-neutral-500 dark:hover:bg-neutral-600">
+                    <td class="whitespace-nowrap px-6 py-4">{{ $permission->name }}</td>
+                    <td class="whitespace-nowrap px-6 py-4 flex justify-end">
+                        <a href="{{ route('roles.permissions.detach', [$data->id, $permission->id]) }}">
+                            <div class="flex space-x-4">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                    <path d="M17.293 19.663l-1.727.245.523 3.696 1.73-.245-.526-3.696zm2.649-4.132l-.246 1.729 3.698.524.246-1.726-3.698-.527zm.596 6.189l1.232-1.233-2.645-2.642-1.231 1.234 2.644 2.641zm.459-20.916c2.87 1.659 3.854 5.328 2.198 8.196l-2.752 4.767-1.737-1 2.754-4.766c1.104-1.911.447-4.362-1.466-5.464-1.911-1.103-4.362-.447-5.465 1.464l-2.752 4.765-1.735-1 2.752-4.765c1.658-2.87 5.33-3.853 8.203-2.197zm-7.276 19.671l-4.715 2.72c-2.869 1.658-6.543.674-8.203-2.196-1.653-2.87-.673-6.541 2.198-8.196l4.715-2.721 1 1.732-4.713 2.722c-1.911 1.104-2.567 3.554-1.466 5.463 1.107 1.911 3.556 2.567 5.47 1.465l4.712-2.72 1.002 1.731z"/>
+                                </svg>
+                                <span>Desvincular</span>
+                            </div>
+                        </a>                        
+                    </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td class="whitespace-nowrap px-6 py-4">{{ __('Nenhuma permissão vinculada') }}</td>
+                    </tr>   
+                    @endforelse
+                </tbody>
+            </table>
         </x-card>
         <x-card>       
-        <div  class="block mt-2 rounded-lg bg-gray-400 p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">  
+        <div  class="block mt-2 rounded-lg bg-gray-200 p-4 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700">  
             <div class="flex justify-between">
                 <div>
                     <x-link href="{{ route(Str::before(Route::currentRouteName(),'.').'.index') }}" class="bg-indigo-600">
@@ -43,6 +70,15 @@
                         Editar  
                     </x-link>                    
                 </div>
+                <x-link href="{{ route('roles.permissions.availables', $data->id) }}" class="bg-green-900">
+                    <span class="pr-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+                      </svg>
+                    </span>
+                    {{ __('Vincular permissão') }}
+                </x-link>
+
                 <x-form action="{{ route(Str::before(Route::currentRouteName(),'.').'.destroy', $data->id ) }}" method="DELETE">      
                     <x-button class="bg-red-500">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -53,6 +89,6 @@
                 </x-form>                
             </div>
         </div>
-    </x-card>
+    </x-card>    
     </x-container>
 </x-app-layout>
