@@ -1,7 +1,7 @@
 <x-app-layout>    
     <x-container>
         <x-breadcrumb>
-            <x-breadcrumb-item :route="route(Str::before(Route::currentRouteName(), '.').'.index')">{{ __('') }}</x-breadcrumb-item>
+            <x-breadcrumb-item :route="route(Str::before(Route::currentRouteName(), '.').'.index')">{{ __('Cargos') }}</x-breadcrumb-item>
         <x-breadcrumb-active>{{ __('Criar') }}</x-breadcrumb-active>
         </x-breadcrumb>
         <x-card>
