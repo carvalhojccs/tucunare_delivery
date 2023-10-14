@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin\PermissionProfile;
 
 use App\Http\Controllers\Controller;
 use App\Models\Profile;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class AttachPermissionProfileController extends Controller
@@ -11,7 +12,7 @@ class AttachPermissionProfileController extends Controller
     /**
      * Handle the incoming request.
      */
-    public function __invoke(Request $request, $profile_id)
+    public function __invoke(Request $request, int $profile_id): RedirectResponse
     {
         if (!$profile = Profile::find($profile_id)) {
             return redirect()->back();

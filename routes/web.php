@@ -63,6 +63,9 @@ use App\Http\Controllers\Admin\PermissionProfile\{
     DetachPermissionProfileController,
     IndexPermissionProfileController
 };
+use App\Http\Controllers\Admin\PermissionRole\AttachPermissionRoleController;
+use App\Http\Controllers\Admin\PermissionRole\AvailablePermissionRoleController;
+use App\Http\Controllers\Admin\PermissionRole\DetachPermissionRoleController;
 use App\Http\Controllers\Admin\PlanProfile\{
     AttachPlanProfileController,
     AvailablePlanProfileController,
@@ -256,6 +259,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('/roles/{id}/edit', EditRoleController::class)->name('roles.edit');
         Route::put('/roles/{id}', UpdateRoleController::class)->name('roles.update');
         Route::delete('/roles/{id}', DestroyRoleController::class)->name('roles.destroy');
+
+        /** Role Permissions management **/
+        Route::get('/roles/{id}/permissions/availables', AvailablePermissionRoleController::class)->name('roles.permissions.availables');
+        Route::post('roles/{id}/permissions', AttachPermissionRoleController::class)->name('roles.permissions.attach');
+        Route::get('roles/{id}/permission/{permission_id}/detach', DetachPermissionRoleController::class)->name('roles.permissions.detach');
     });
     
     

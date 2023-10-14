@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-container>
         <x-breadcrumb>
-            <x-breadcrumb-active>{{ __('Papeis') }}</x-breadcrumb-active>
+            <x-breadcrumb-active>{{ __('Cargos') }}</x-breadcrumb-active>
         </x-breadcrumb>
         <x-links.new :route="route(Str::before(Route::currentRouteName(), '.').'.create')" />
         <x-forms.search filter="{{ $filters['filter'] ?? '' }}" />
