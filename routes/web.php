@@ -94,6 +94,9 @@ use App\Http\Controllers\Admin\Role\{
     StoreRoleController,
     UpdateRoleController
 };
+use App\Http\Controllers\Admin\RoleUser\AttachRoleUserController;
+use App\Http\Controllers\Admin\RoleUser\AvailableRoleUserController;
+use App\Http\Controllers\Admin\RoleUser\DetachRoleUserController;
 use App\Http\Controllers\Admin\Table\{
     CreateTableController,
     DestroyTableController,
@@ -264,6 +267,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('/roles/{id}/permissions/availables', AvailablePermissionRoleController::class)->name('roles.permissions.availables');
         Route::post('roles/{id}/permissions', AttachPermissionRoleController::class)->name('roles.permissions.attach');
         Route::get('roles/{id}/permission/{permission_id}/detach', DetachPermissionRoleController::class)->name('roles.permissions.detach');
+
+        /** User Roles management **/
+        Route::get('/users/{id}/roles/availables', AvailableRoleUserController::class)->name('users.roles.availables');
+        Route::post('users/{id}/roles', AttachRoleUserController::class)->name('users.roles.attach');
+        Route::get('users/{id}/permission/{permission_id}/detach', DetachRoleUserController::class)->name('users.roles.detach');
     });
     
     
