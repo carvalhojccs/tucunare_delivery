@@ -6,6 +6,7 @@ use App\Tenant\Traits\TenantTrait;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Role extends Model
 {
@@ -13,6 +14,11 @@ class Role extends Model
     use TenantTrait;
 
     protected $guarded = ['id'];
+
+    public function permissions(): BelongsToMany
+    {
+        return $this->belongsToMany(Permission::class);
+    }
 
     public function scopeSearch(Builder $query, ?string $filter)
     {
