@@ -70,13 +70,24 @@ class User extends Authenticatable
         return $this->belongsTo(Tenant::class);
     }
 
+    public function roles(): BelongsToMany
+	{
+		return $this->belongsToMany(Role::class);
+	}
+
     public function scopeTenantUserFilter(Builder $query): void
     {
         $query->where('tenant_id', auth()->user()->tenant_id);
     }
 
-    public function roles(): BelongsToMany
-	{
-		return $this->belongsToMany(Role::class);
-	}
+    public function scopeRolesAvailable(Builder $q,  int $user_id)
+    {
+        return Role::whereNotIn('roles.id', function ($query) use ($user_id) {
+            $query->select('role_user.user_id');
+            $query->from('role_user');
+            $query->where('role_user.user_id', $user_id);
+        })
+        ->paginate();
+    }
+
 }
