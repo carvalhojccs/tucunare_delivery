@@ -13,8 +13,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('roles', function (Blueprint $table) {
-            $table->id();
-            $table->foreignIdFor(Tenant::class)->constrained();
+            $table->id();            
             $table->string('name')->unique();
             $table->string('description')->nullable();
             $table->timestamps();

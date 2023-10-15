@@ -2,6 +2,7 @@
 
 namespace App\Actions\Fortify;
 
+use App\Events\TenantCreated;
 use App\Models\User;
 use App\Services\TenantService;
 use Illuminate\Support\Facades\Validator;
@@ -33,7 +34,9 @@ class CreateNewUser implements CreatesNewUsers
         }
         
         $tenantService = app(TenantService::class);
-        $user = $tenantService->make($plan, $input);        
+        $user = $tenantService->make($plan, $input);
+        
+        event(new TenantCreated($user));
 
         return $user;
     }

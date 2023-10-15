@@ -10,8 +10,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Role extends Model
 {
-    use HasFactory;
-    use TenantTrait;
+    use HasFactory;    
 
     protected $guarded = ['id'];
 

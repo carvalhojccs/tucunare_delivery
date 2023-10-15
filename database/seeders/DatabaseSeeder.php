@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
                 ProfilesSeed::class,
                 PermissionsSeed::class,
                 PlanProfileSeed::class,
+                RoleSeed::class,
             ]
         );
     }
