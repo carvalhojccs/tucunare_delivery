@@ -30,7 +30,7 @@ trait UserACLTrait
 
         foreach ($tenant->plan->profiles as $profile) {
             foreach ($profile->pemissions as $permission) {
-                array_push($permissions, $permission);
+                array_push($permissions, $permission->name);
             }
         }
 
@@ -43,8 +43,10 @@ trait UserACLTrait
 
         $permissions = [];
 
-        foreach ($roles->permissions as $permission) {
-            array_push($permissions, $permission);
+        foreach ($roles as $role) {
+            foreach ($role->permissions as $permission) {
+                array_push($permissions, $permission->name);
+            }
         }
 
         return $permissions;
