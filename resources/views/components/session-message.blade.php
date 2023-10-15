@@ -1,20 +1,6 @@
-@props(['type'])
-
 @if (session($type))
-    @switch($type)        
-        @case('info')
-            {{ $color = 'amber' }}
-            @break
-        @case('error')
-        {{ $color = 'red' }}
-        @break
-        @case('message')
-        {{ $color = 'red' }}
-        @break
-    @endswitch
     <div class="space-y-2">
-        <div {{ $attributes->merge(['class' => 'px-4 py-4 text-'.$color.'-800 bg-'.$color.'-300  rounded shadow-lg shadow-'.$color.'-500/50', 'role' => 'alert']) }}>
-        
+        <div {{ $attributes->merge(['class' => 'px-4 py-4 text-green-800 bg-green-300  rounded shadow-lg shadow-green-500/50', 'role' => 'alert']) }}>        
             {{ session($type) }}
         </div>
     </div>

@@ -12,7 +12,9 @@ class EditPermissionController extends Controller
      */
     public function __invoke($id)
     {
-        $permission = Permission::findOrFail($id);
+        if(!$permission = Permission::findOrFail($id)){
+            return redirect()->back()->with('info', 'Permissão não encontrada!');
+        };
 
         return view('admin.pages.permissions.edit', compact('permission'));
     }

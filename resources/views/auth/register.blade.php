@@ -1,9 +1,17 @@
 <x-authentication-layout>
-    <h1 class="text-3xl text-slate-800 font-bold mb-6">{{ __('Crie a sua conta') }} ✨</h1>
+    <h1 class="text-3xl text-slate-800 font-bold mb-6">{{ __('Crie a sua conta para o plano:') }} {{ session('plan')->name }} </h1>    
     <!-- Form -->
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <div class="space-y-4">
+            <div>
+                <x-label for="cnpj">{{ __('CNPJ') }} <span class="text-rose-500">*</span></x-label>
+                <x-input id="cnpj" type="text" name="cnpj" :value="old('cnpj')" required autofocus autocomplete="cnpj" />
+            </div>
+            <div>
+                <x-label for="empresa">{{ __('Empresa') }} <span class="text-rose-500">*</span></x-label>
+                <x-input id="empresa" type="text" name="empresa" :value="old('empresa')" required autofocus autocomplete="empresa" />
+            </div>
             <div>
                 <x-label for="name">{{ __('Nome Completo') }} <span class="text-rose-500">*</span></x-label>
                 <x-input id="name" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />

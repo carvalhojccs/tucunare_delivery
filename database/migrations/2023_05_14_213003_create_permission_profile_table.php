@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('permission_profile', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Permission::class);
-            $table->foreignIdFor(Profile::class);
+            $table->foreignIdFor(Permission::class)->constrained();
+            $table->foreignIdFor(Profile::class)->constrained();
         });
     }
 
