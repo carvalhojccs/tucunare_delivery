@@ -2,6 +2,8 @@
 
 namespace App\Observers;
 
+use App\Jobs\SaveAudit;
+use App\Models\Audit;
 use App\Models\Category;
 use Illuminate\Support\Str;
 
@@ -15,6 +17,18 @@ class CategoryObserver
         $category->url = Str::kebab($category->name);
     }
 
+    public function created(Category $category): void
+    {
+        SaveAudit::dispatch([
+            'event' => 'created',
+            'user_id' => auth()->id(),
+            'when' => now(),
+            'ip' => request()->ip(),
+            'auditable_id' => $category->id,
+            'auditable_type' => Category::class
+        ]);
+    }
+
     /**
      * Handle the Category "updating" event.
      */
@@ -23,12 +37,42 @@ class CategoryObserver
         $category->url = Str::kebab($category->name);
     }
 
+    public function updated(Category $category): void
+    {
+        $old = [];
+
+        foreach ($category->getDirty() as $dirtyKey => $dirtyValue) {
+            $old[$dirtyKey] = $category->getOriginal($dirtyKey);
+        }
+
+        SaveAudit::dispatch([
+            'event' => 'updated',
+            'user_id' => auth()->id(),
+            'when' => now(),
+            'ip' => request()->ip(),
+            'auditable_id' => $category->id,
+            'auditable_type' => Category::class,
+            'details' => [
+                'old' => $old,
+                'new' => $category->getDirty(),
+            ]
+        ]);
+    }
+
     /**
      * Handle the Category "deleted" event.
      */
     public function deleted(Category $category): void
     {
-        //
+        SaveAudit::dispatch([
+            'event' => 'deleted',
+            'user_id' => auth()->id(),
+            'when' => now(),
+            'ip' => request()->ip(),
+            'auditable_id' => $category->id,
+            'auditable_type' => Category::class,
+            'details' => $category->toArray()
+        ]);
     }
 
     /**

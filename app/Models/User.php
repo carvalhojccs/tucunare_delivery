@@ -35,6 +35,8 @@ class User extends Authenticatable
         'tenant_id',
     ];
 
+    protected $connection = 'pgsql';
+
     /**
      * The attributes that should be hidden for serialization.
      *

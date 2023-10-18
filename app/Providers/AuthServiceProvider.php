@@ -8,6 +8,8 @@ use App\Models\Permission;
 use App\Models\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
+use function Pest\Laravel\getConnection;
+
 class AuthServiceProvider extends ServiceProvider
 {
     /**
@@ -24,6 +26,7 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
+
         $permissions = Permission::all();
 
         foreach ($permissions as $permission) {
