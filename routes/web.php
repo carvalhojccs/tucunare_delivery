@@ -232,15 +232,15 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
         Route::get('categories/{id}/products', ProductController::class)->name('categories.products');
 
         /** Table management **/
-        Route::middleware('can:module_tables')->group(function(){
+        Route::middleware('can:module_table')->group(function(){
             Route::match(['get','post'],'/tables/search', SearchTableController::class)->name('tables.search');
             Route::get('/tables', IndexTableController::class)->name('tables.index');
-            Route::post('/tables', StoreTableController::class)->name('tables.store')->middleware('can:module_tables_create');
-            Route::get('/tables/create', CreateTableController::class)->name('tables.create')->middleware('can:module_tables_create');
-            Route::get('/tables/{id}', ShowTableController::class)->name('tables.show')->middleware('can:module_tables_show');
-            Route::get('/tables/{id}/edit', EditTableController::class)->name('tables.edit')->middleware('can:module_tables_edit');
-            Route::put('/tables/{id}', UpdateTableController::class)->name('tables.update')->middleware('can:module_tables_edit');
-            Route::delete('/tables/{id}', DestroyTableController::class)->name('tables.destroy')->middleware('can:module_tables_delete');
+            Route::post('/tables', StoreTableController::class)->name('tables.store')->middleware('can:module_table_create');
+            Route::get('/tables/create', CreateTableController::class)->name('tables.create')->middleware('can:module_table_create');
+            Route::get('/tables/{id}', ShowTableController::class)->name('tables.show')->middleware('can:module_table_show');
+            Route::get('/tables/{id}/edit', EditTableController::class)->name('tables.edit')->middleware('can:module_table_edit');
+            Route::put('/tables/{id}', UpdateTableController::class)->name('tables.update')->middleware('can:module_table_edit');
+            Route::delete('/tables/{id}', DestroyTableController::class)->name('tables.destroy')->middleware('can:module_table_delete');
         });
 
         /** Tenant management **/

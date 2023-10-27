@@ -13,8 +13,8 @@ class ProfilesSeed extends Seeder
      */
     public function run(): void
     {
-        Profile::create(['name' => 'Gestor de categorias']);
-        Profile::create(['name' => 'Gestor de produtos']);
-        Profile::create(['name' => 'Gestor de mesas']);
+        Profile::create(['name' => 'Categorias']);
+        Profile::create(['name' => 'Produtos']);
+        Profile::create(['name' => 'Mesas']);
     }
 }

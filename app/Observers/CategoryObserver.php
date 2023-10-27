@@ -3,7 +3,6 @@
 namespace App\Observers;
 
 use App\Jobs\SaveAudit;
-use App\Models\Audit;
 use App\Models\Category;
 use Illuminate\Support\Str;
 

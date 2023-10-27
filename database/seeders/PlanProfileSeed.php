@@ -14,13 +14,13 @@ class PlanProfileSeed extends Seeder
      */
     public function run(): void
     {
-        $plan = Plan::find(1);
-        $plan->profiles()->attach(1);        
-        $plan->profiles()->attach(2);
+        $free = Plan::find(1);
+        $free->profiles()->attach(1);        
+        $free->profiles()->attach(2);
 
-        $plan = Plan::find(2);
-        $plan->profiles()->attach(1);        
-        $plan->profiles()->attach(2);        
-        $plan->profiles()->attach(3); 
+        $premium = Plan::find(2);
+        $premium->profiles()->attach(1);        
+        $premium->profiles()->attach(2);        
+        $premium->profiles()->attach(3); 
     }
 }
