@@ -15,8 +15,12 @@ class StoreCategoryController extends Controller
      * Handle the incoming request.
      */
     public function __invoke(StoreCategoryRequest $request): RedirectResponse
-    {        
+    {   
+        ds($request->validated());
+        
         Category::create($request->all());
+
+
 
         return redirect()
             ->route(Str::before(Route::currentRouteName(),'.').'.index')
