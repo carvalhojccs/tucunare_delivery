@@ -14,7 +14,7 @@ class TableObserver
     {
 
         SaveAudit::dispatch([
-            'event' => __METHOD__,
+            'event' => 'created',
             'user_id' => auth()->id(),
             'when' => now(),
             'ip' => request()->ip(),
@@ -28,7 +28,24 @@ class TableObserver
      */
     public function updated(Table $table): void
     {
-        //
+        $old = [];
+
+        foreach ($table->getDirty() as $dirtyKey => $dirtyValue) {
+            $old[$dirtyKey] = $table->getOriginal($dirtyKey);
+        }
+
+        SaveAudit::dispatch([
+            'event' => 'updated',
+            'user_id' => auth()->id(),
+            'when' => now(),
+            'ip' => request()->ip(),
+            'auditable_id' => $table->id,
+            'auditable_type' => Table::class,
+            'details' => [
+                'old' => $old,
+                'new' => $table->getDirty(),
+            ]
+        ]);
     }
 
     /**
@@ -36,7 +53,15 @@ class TableObserver
      */
     public function deleted(Table $table): void
     {
-        //
+        SaveAudit::dispatch([
+            'event' => 'deleted',
+            'user_id' => auth()->id(),
+            'when' => now(),
+            'ip' => request()->ip(),
+            'auditable_id' => $table->id,
+            'auditable_type' => Table::class,
+            'details' => $table->toArray()
+        ]);
     }
 
     /**

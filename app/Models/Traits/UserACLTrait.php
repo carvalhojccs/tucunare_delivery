@@ -26,10 +26,10 @@ trait UserACLTrait
     {
         $tenant = Tenant::with('plan.profiles.permissions')->where('id', $this->tenant_id)->first();
 
-        $permissions = [];
+        $permissions = [];        
 
         foreach ($tenant->plan->profiles as $profile) {
-            foreach ($profile->pemissions as $permission) {
+            foreach ($profile->permissions as $permission) {     
                 array_push($permissions, $permission->name);
             }
         }
@@ -39,7 +39,7 @@ trait UserACLTrait
 
     public function permissionsRole(): array
     {
-        $roles = $this->roles->with('permissions')->get();
+        $roles = $this->roles()->with('permissions')->get();
 
         $permissions = [];
 

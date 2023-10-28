@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Fortify\TwoFactorAuthenticatable;
@@ -76,6 +77,11 @@ class User extends Authenticatable
 	{
 		return $this->belongsToMany(Role::class);
 	}
+
+    public function logins(): HasMany
+{
+	return $this->hasMany(AuditLogin::class);
+}
 
     public function scopeTenantUserFilter(Builder $query): void
     {

@@ -3,7 +3,9 @@
         <x-breadcrumb>
             <x-breadcrumb-active>{{ __('Mesas') }}</x-breadcrumb-active>
         </x-breadcrumb>
-        <x-links.new :route="route(Str::before(Route::currentRouteName(), '.').'.create')" />
+        @can("module_table_create")
+            <x-links.new :route="route(Str::before(Route::currentRouteName(), '.').'.create')" />    
+        @endcan
         <x-forms.search filter="{{ $filters['filter'] ?? '' }}" />
         <x-session-message type="error" />
         <x-session-message type="message" />
